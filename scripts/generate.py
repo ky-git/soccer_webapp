@@ -8,11 +8,16 @@
 
 from __future__ import annotations  # 型ヒント(dict | None等)の互換性のため
 
+import argparse
 from curl_cffi import requests as cffi_requests
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import pandas as pd
 import os
+import time
+import json
+import sys
+from pathlib import Path
 
 JST = ZoneInfo("Asia/Tokyo")
 LEAGUES = {"NWSL": "usa.nwsl", "WSL": "eng.w.1"}
@@ -34,9 +39,6 @@ STAT_NAME_CANDIDATES = {
     "diff":          ["pointDifferential", "goalDifferential", "differential"],
     "points":        ["points"],
 }
-
-
-import time
 
 
 def _get(url, params=None, max_retries=3, backoff_seconds=5):
@@ -317,10 +319,6 @@ def build_standings_leaders_html(data):
 # 代わりに、タイムスタンプを JSON ファイルの中身として明示的に保存し、
 # それを読んで比較する。
 
-import json
-import sys
-from pathlib import Path
-
 STATE_FILE = Path("data/state.json")
 # NWSL(米国)は西海岸の試合がJST正午〜午後にずれ込むため、特定の時刻を
 # 「本日分は確定した」基準にはできない。代わりに、前回更新からの経過時間で
@@ -390,13 +388,24 @@ def _should_update(state: dict | None, now: datetime) -> tuple[bool, str]:
 # ---------------------------------------------------------
 
 def main():
-    now = datetime.now(JST)
-    state = _load_state()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="判定ロジックを無視して強制的に実行する",
+    )
+    args = parser.parse_args()
 
-    should_update, reason = _should_update(state, now)
-    print(reason)
-    if not should_update:
-        sys.exit(0)
+    now = datetime.now(JST)
+
+    if args.force:
+        print("強制実行オプション(--force)が指定されたため、判定をスキップして更新します。")
+    else:
+        state = _load_state()
+        should_update, reason = _should_update(state, now)
+        print(reason)
+        if not should_update:
+            sys.exit(0)
 
     leaders_data = {}
     fixtures_data = {}
