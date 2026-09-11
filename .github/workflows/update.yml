@@ -1,0 +1,37 @@
+name: Update NWSL/WSL Dashboard
+
+on:
+  schedule:
+    # 毎時17分に起動(00分/30分は混雑しやすいため避ける)。
+    # 実際の重い処理を行うかどうかはスクリプト内の判定ロジックに任せる。
+    - cron: "17 * * * *"
+  workflow_dispatch: {}   # Actionsタブから手動実行もできるようにする
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Pythonをセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 依存パッケージをインストール
+        run: pip install -r requirements.txt
+
+      - name: 更新判定 & データ取得 & HTML生成
+        run: python scripts/generate.py
+
+      - name: 変更をコミット・push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html data/state.json
+          git diff --staged --quiet || git commit -m "Update dashboard ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          git push
