@@ -26,7 +26,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 更新判定 & データ取得 & HTML生成
-        run: python scripts/generate.py
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            python scripts/generate.py --force
+          else
+            python scripts/generate.py
+          fi
 
       - name: 変更をコミット・push
         run: |
