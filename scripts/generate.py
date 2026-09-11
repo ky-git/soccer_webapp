@@ -169,10 +169,10 @@ def _match_card_html(m):
     if m["done"]:
         score_html = f'<div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">{m["score"]}</div>'
     else:
-        score_html = f'<div style="font-size:12px; color:#666666; margin-top:4px;">{m["time"]}〜</div>'
+        score_html = f'<div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">{m["time"]}〜</div>'
     return f'''<div style="border:1px solid {border}; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px;">
-        <div style="font-size:13px; color:#222222; line-height:1.4;">{m["home"]}</div>
-        <div style="font-size:13px; color:#222222; line-height:1.4;">{m["away"]}</div>
+        <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["home"]}</div>
+        <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["away"]}</div>
         {score_html}
     </div>'''
 
@@ -241,6 +241,15 @@ def build_timeline_html(nwsl_df, wsl_df):
 # HTML生成: 順位表 + ランキング
 # ---------------------------------------------------------
 
+def _fmt_value(v):
+    """floatの整数値(例: 23.0)をintとして表示する(23.0 -> '23')。それ以外はそのまま文字列化。"""
+    if isinstance(v, float) and v.is_integer():
+        return str(int(v))
+    if v is None:
+        return ""
+    return str(v)
+
+
 def _standings_table_html(df):
     header_cells = "".join(
         f'<th style="font-size:12px; font-weight:700; color:#333; padding:6px 8px; '
@@ -248,7 +257,7 @@ def _standings_table_html(df):
     rows_html = []
     for _, row in df.iterrows():
         cells = "".join(
-            f'<td style="font-size:13px; color:#222; padding:5px 8px; border-bottom:1px solid #e5e5e2; white-space:nowrap;">{row[col]}</td>' for col in df.columns)
+            f'<td style="font-size:13px; font-weight:600; color:#222; padding:5px 8px; border-bottom:1px solid #e5e5e2; white-space:nowrap;">{_fmt_value(row[col])}</td>' for col in df.columns)
         rows_html.append(f"<tr>{cells}</tr>")
     return f'''<table style="border-collapse:collapse; background:#fff; border-radius:6px; overflow:hidden; width:100%;">
         <thead><tr>{header_cells}</tr></thead><tbody>{"".join(rows_html)}</tbody></table>'''
@@ -261,10 +270,10 @@ def _rank_row_html(rank, name, team, value, unit):
         <div style="width:22px; height:22px; border-radius:50%; background:{badge_bg}; color:{badge_color};
                     font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0;">{rank}</div>
         <div style="flex:1; min-width:0;">
-            <div style="font-size:13px; color:#222; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{name}</div>
-            <div style="font-size:11px; color:#888; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{team}</div>
+            <div style="font-size:13px; font-weight:600; color:#222; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{name}</div>
+            <div style="font-size:11px; font-weight:500; color:#888; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{team}</div>
         </div>
-        <div style="font-size:14px; font-weight:700; color:#222; flex-shrink:0;">{value}{unit}</div>
+        <div style="font-size:14px; font-weight:700; color:#222; flex-shrink:0;">{_fmt_value(value)}{unit}</div>
     </div>'''
 
 
@@ -412,7 +421,7 @@ def main():
 <body style="margin:0; background:#f7f7f5;">
   <div style="font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif; background:#f7f7f5; color:#111; padding:24px; max-width:1100px; margin:0 auto;">
     <h1 style="font-size:20px; font-weight:700; color:#111; margin:0 0 4px;">NWSL / WSL ダッシュボード</h1>
-    <p style="font-size:12px; color:#888; margin:0 0 16px;">最終更新: {updated_at}</p>
+    <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: {updated_at}</p>
 
     {build_standings_leaders_html(leaders_data)}
 
