@@ -1,0 +1,513 @@
+{
+  "last_full_update": "2026-09-11T20:16:22.995538+09:00",
+  "fixtures_snapshot": {
+    "NWSL": [
+      {
+        "日時(JST)": "2026-08-29 09:00 JST",
+        "ホーム": "Gotham FC",
+        "アウェイ": "Portland Thorns FC",
+        "スコア": "1 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-08-29 11:00 JST",
+        "ホーム": "San Diego Wave FC",
+        "アウェイ": "Racing Louisville FC",
+        "スコア": "3 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-08-30 07:30 JST",
+        "ホーム": "Kansas City Current",
+        "アウェイ": "North Carolina Courage",
+        "スコア": "3 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-08-30 09:00 JST",
+        "ホーム": "Orlando Pride",
+        "アウェイ": "Utah Royals",
+        "スコア": "1 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-08-30 09:55 JST",
+        "ホーム": "Denver Summit FC",
+        "アウェイ": "Chicago Stars FC",
+        "スコア": "6 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-08-31 01:30 JST",
+        "ホーム": "Washington Spirit",
+        "アウェイ": "Bay FC",
+        "スコア": "1 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-08-31 08:00 JST",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "Houston Dash",
+        "スコア": "1 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-01 09:00 JST",
+        "ホーム": "Boston Legacy FC",
+        "アウェイ": "Angel City FC",
+        "スコア": "2 - 5",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-05 10:30 JST",
+        "ホーム": "Utah Royals",
+        "アウェイ": "Boston Legacy FC",
+        "スコア": "1 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-05 11:00 JST",
+        "ホーム": "Bay FC",
+        "アウェイ": "Kansas City Current",
+        "スコア": "1 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-06 07:30 JST",
+        "ホーム": "Racing Louisville FC",
+        "アウェイ": "Angel City FC",
+        "スコア": "0 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-07 03:00 JST",
+        "ホーム": "Denver Summit FC",
+        "アウェイ": "Gotham FC",
+        "スコア": "3 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-07 05:00 JST",
+        "ホーム": "Chicago Stars FC",
+        "アウェイ": "North Carolina Courage",
+        "スコア": "0 - 6",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-07 05:00 JST",
+        "ホーム": "Portland Thorns FC",
+        "アウェイ": "Washington Spirit",
+        "スコア": "1 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-07 09:30 JST",
+        "ホーム": "Orlando Pride",
+        "アウェイ": "Houston Dash",
+        "スコア": "3 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-07 10:00 JST",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "San Diego Wave FC",
+        "スコア": "1 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-12 07:30 JST",
+        "ホーム": "Racing Louisville FC",
+        "アウェイ": "Gotham FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-12 09:00 JST",
+        "ホーム": "Kansas City Current",
+        "アウェイ": "Orlando Pride",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-12 11:00 JST",
+        "ホーム": "Angel City FC",
+        "アウェイ": "Denver Summit FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 07:30 JST",
+        "ホーム": "San Diego Wave FC",
+        "アウェイ": "North Carolina Courage",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 09:00 JST",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "Bay FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 09:45 JST",
+        "ホーム": "Houston Dash",
+        "アウェイ": "Utah Royals",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-14 02:00 JST",
+        "ホーム": "Washington Spirit",
+        "アウェイ": "Boston Legacy FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-14 08:00 JST",
+        "ホーム": "Portland Thorns FC",
+        "アウェイ": "Chicago Stars FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-17 10:30 JST",
+        "ホーム": "Denver Summit FC",
+        "アウェイ": "Bay FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-17 11:00 JST",
+        "ホーム": "Angel City FC",
+        "アウェイ": "Seattle Reign FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-19 11:00 JST",
+        "ホーム": "San Diego Wave FC",
+        "アウェイ": "Kansas City Current",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 05:00 JST",
+        "ホーム": "Orlando Pride",
+        "アウェイ": "Portland Thorns FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 07:30 JST",
+        "ホーム": "North Carolina Courage",
+        "アウェイ": "Gotham FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 09:45 JST",
+        "ホーム": "Denver Summit FC",
+        "アウェイ": "Seattle Reign FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-21 03:00 JST",
+        "ホーム": "Boston Legacy FC",
+        "アウェイ": "Houston Dash",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-21 06:00 JST",
+        "ホーム": "Chicago Stars FC",
+        "アウェイ": "Washington Spirit",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-21 08:00 JST",
+        "ホーム": "Utah Royals",
+        "アウェイ": "Angel City FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-21 08:00 JST",
+        "ホーム": "Bay FC",
+        "アウェイ": "Racing Louisville FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-26 07:30 JST",
+        "ホーム": "Racing Louisville FC",
+        "アウェイ": "San Diego Wave FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-26 09:00 JST",
+        "ホーム": "Gotham FC",
+        "アウェイ": "Chicago Stars FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-26 09:30 JST",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "Boston Legacy FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 01:30 JST",
+        "ホーム": "Kansas City Current",
+        "アウェイ": "Denver Summit FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 07:30 JST",
+        "ホーム": "Washington Spirit",
+        "アウェイ": "Angel City FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 09:45 JST",
+        "ホーム": "Portland Thorns FC",
+        "アウェイ": "Houston Dash",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-28 06:00 JST",
+        "ホーム": "Bay FC",
+        "アウェイ": "Orlando Pride",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-28 08:00 JST",
+        "ホーム": "Utah Royals",
+        "アウェイ": "North Carolina Courage",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-10-03 09:00 JST",
+        "ホーム": "Orlando Pride",
+        "アウェイ": "San Diego Wave FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-10-03 11:00 JST",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "North Carolina Courage",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      }
+    ],
+    "WSL": [
+      {
+        "日時(JST)": "2026-09-05 03:00 JST",
+        "ホーム": "London City Lionesses",
+        "アウェイ": "Manchester United",
+        "スコア": "2 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-05 20:35 JST",
+        "ホーム": "Chelsea",
+        "アウェイ": "Aston Villa",
+        "スコア": "1 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-06 20:00 JST",
+        "ホーム": "Brighton & Hove Albion",
+        "アウェイ": "Arsenal",
+        "スコア": "0 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-06 20:00 JST",
+        "ホーム": "Tottenham Hotspur",
+        "アウェイ": "West Ham United",
+        "スコア": "3 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-06 22:00 JST",
+        "ホーム": "Charlton Athletic",
+        "アウェイ": "Liverpool",
+        "スコア": "0 - 4",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-06 22:00 JST",
+        "ホーム": "Crystal Palace",
+        "アウェイ": "Everton",
+        "スコア": "1 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-06 22:30 JST",
+        "ホーム": "Manchester City",
+        "アウェイ": "Birmingham City",
+        "スコア": "3 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "日時(JST)": "2026-09-12 20:45 JST",
+        "ホーム": "West Ham United",
+        "アウェイ": "London City Lionesses",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 20:00 JST",
+        "ホーム": "Manchester United",
+        "アウェイ": "Chelsea",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 22:00 JST",
+        "ホーム": "Birmingham City",
+        "アウェイ": "Brighton & Hove Albion",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 22:00 JST",
+        "ホーム": "Everton",
+        "アウェイ": "Charlton Athletic",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 22:00 JST",
+        "ホーム": "Liverpool",
+        "アウェイ": "Tottenham Hotspur",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-13 22:45 JST",
+        "ホーム": "Arsenal",
+        "アウェイ": "Crystal Palace",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-14 02:30 JST",
+        "ホーム": "Aston Villa",
+        "アウェイ": "Manchester City",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-19 03:00 JST",
+        "ホーム": "Manchester City",
+        "アウェイ": "Liverpool",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-19 20:30 JST",
+        "ホーム": "Charlton Athletic",
+        "アウェイ": "London City Lionesses",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-19 20:45 JST",
+        "ホーム": "Chelsea",
+        "アウェイ": "Birmingham City",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 01:30 JST",
+        "ホーム": "Arsenal",
+        "アウェイ": "Manchester United",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 22:00 JST",
+        "ホーム": "Brighton & Hove Albion",
+        "アウェイ": "Aston Villa",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 22:00 JST",
+        "ホーム": "Crystal Palace",
+        "アウェイ": "Tottenham Hotspur",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-20 22:00 JST",
+        "ホーム": "West Ham United",
+        "アウェイ": "Everton",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-26 21:30 JST",
+        "ホーム": "Charlton Athletic",
+        "アウェイ": "Manchester City",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 01:00 JST",
+        "ホーム": "London City Lionesses",
+        "アウェイ": "Brighton & Hove Albion",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 21:00 JST",
+        "ホーム": "Manchester United",
+        "アウェイ": "West Ham United",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 22:00 JST",
+        "ホーム": "Birmingham City",
+        "アウェイ": "Crystal Palace",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 22:00 JST",
+        "ホーム": "Liverpool",
+        "アウェイ": "Everton",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-27 22:00 JST",
+        "ホーム": "Tottenham Hotspur",
+        "アウェイ": "Aston Villa",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "日時(JST)": "2026-09-28 00:30 JST",
+        "ホーム": "Chelsea",
+        "アウェイ": "Arsenal",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      }
+    ]
+  }
+}
