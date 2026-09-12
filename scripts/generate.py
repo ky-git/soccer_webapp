@@ -546,13 +546,18 @@ def _should_update(state: dict | None, now: datetime) -> tuple[bool, str]:
 # ---------------------------------------------------------
 
 def main():
+    force = "--force" in sys.argv
+
     now = datetime.now(JST)
     state = _load_state()
 
-    should_update, reason = _should_update(state, now)
-    print(reason)
-    if not should_update:
-        sys.exit(0)
+    if force:
+        print("--force が指定されたため、更新判定をスキップして強制的に更新します")
+    else:
+        should_update, reason = _should_update(state, now)
+        print(reason)
+        if not should_update:
+            sys.exit(0)
 
     leaders_data = {}
     fixtures_data = {}
