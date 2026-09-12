@@ -391,7 +391,7 @@ def build_match_modal_html(all_match_details: dict) -> str:
         const subCol = (side) => {{
           const items = d.substitutions.filter(s => s.team === side);
           if (!items.length) return '<div style="font-size:12px; color:#bbb; text-align:left;">-</div>';
-          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:left;">
+          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:left; white-space:nowrap; overflow-x:auto;">
               ${{s.minute}} <span style="color:#2f6fb3;">IN</span> ${{s.player_in}} / <span style="color:#b3392f;">OUT</span> ${{s.player_out}}
             </div>`).join('');
         }};
@@ -408,8 +408,8 @@ def build_match_modal_html(all_match_details: dict) -> str:
 
         document.getElementById('match-modal-body').innerHTML = `
           <div style="display:flex; gap:16px; margin-bottom:8px;">
-            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:left;">${{d.home_name}}</div>
-            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:left;">${{d.away_name}}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.home_name}}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.away_name}}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin:12px 0 6px; text-align:center;">得点</div>
