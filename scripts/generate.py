@@ -182,7 +182,7 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
     for roster in data.get("rosters", []):
         team_name = roster.get("team", {}).get("displayName")
         starters = [
-            p.get("athlete", {}).get("displayName")
+            {"name": p.get("athlete", {}).get("displayName"), "jersey": p.get("jersey")}
             for p in roster.get("roster", [])
             if p.get("starter")
         ]
@@ -351,14 +351,19 @@ def build_match_modal_html(all_match_details: dict) -> str:
         const d = MATCH_DETAILS[eventId];
         if (!d) return;
 
-        const goalsHtml = d.goals.length ? d.goals.map(g => {{
-          const side = g.team === 'home' ? d.home_name : d.away_name;
-          const og = g.own_goal ? '(OG)' : '';
-          return `<div style="font-size:13px; color:#222; padding:3px 0;">${{g.minute}} — ${{g.scorer}}${{og}} <span style="color:#888;">(${{side}})</span></div>`;
-        }}).join('') : '<div style="font-size:13px; color:#888;">得点なし</div>';
+        const goalCol = (side) => {{
+          const items = d.goals.filter(g => g.team === side);
+          if (!items.length) return '<div style="font-size:12px; color:#bbb;">-</div>';
+          return items.map(g => {{
+            const og = g.own_goal ? ' (OG)' : '';
+            return `<div style="font-size:13px; color:#222; padding:3px 0;">${{g.minute}} ${{g.scorer}}${{og}}</div>`;
+          }}).join('');
+        }};
 
-        const lineupCol = (names) => names.length
-          ? names.map(n => `<div style="font-size:12px; color:#222; padding:2px 0;">${{n}}</div>`).join('')
+        const lineupCol = (players) => players.length
+          ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0;">
+               <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>${{p.name}}
+             </div>`).join('')
           : '<div style="font-size:12px; color:#888;">データなし</div>';
 
         const statsRows = STAT_LABELS.map(([key, label]) => {{
@@ -372,18 +377,26 @@ def build_match_modal_html(all_match_details: dict) -> str:
         }}).join('');
 
         document.getElementById('match-modal-body').innerHTML = `
-          <h2 style="font-size:16px; font-weight:700; color:#111; margin:0 0 14px;">${{d.home_name}} vs ${{d.away_name}}</h2>
+          <h2 style="font-size:16px; font-weight:700; color:#111; text-align:center; margin:0 0 16px;">${{d.home_name}} vs ${{d.away_name}}</h2>
 
-          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px;">得点</div>
-          <div style="margin-bottom:16px;">${{goalsHtml}}</div>
-
-          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px;">スタメン</div>
-          <div style="display:flex; gap:16px; margin-bottom:16px;">
-            <div style="flex:1;"><div style="font-size:11px; color:#888; margin-bottom:4px;">${{d.home_name}}</div>${{lineupCol(d.lineups.home)}}</div>
-            <div style="flex:1;"><div style="font-size:11px; color:#888; margin-bottom:4px;">${{d.away_name}}</div>${{lineupCol(d.lineups.away)}}</div>
+          <div style="display:flex; gap:16px; margin-bottom:8px;">
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.home_name}}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.away_name}}</div>
           </div>
 
-          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px;">スタッツ比較</div>
+          <div style="font-size:13px; font-weight:700; color:#111; margin:12px 0 6px; text-align:center;">得点</div>
+          <div style="display:flex; gap:16px; margin-bottom:16px;">
+            <div style="flex:1; text-align:center;">${{goalCol('home')}}</div>
+            <div style="flex:1; text-align:center;">${{goalCol('away')}}</div>
+          </div>
+
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタメン</div>
+          <div style="display:flex; gap:16px; margin-bottom:16px;">
+            <div style="flex:1;">${{lineupCol(d.lineups.home)}}</div>
+            <div style="flex:1;">${{lineupCol(d.lineups.away)}}</div>
+          </div>
+
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタッツ比較</div>
           <table style="width:100%; border-collapse:collapse;"><tbody>${{statsRows}}</tbody></table>
         `;
 
