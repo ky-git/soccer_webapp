@@ -8,16 +8,11 @@
 
 from __future__ import annotations  # 型ヒント(dict | None等)の互換性のため
 
-import argparse
 from curl_cffi import requests as cffi_requests
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import pandas as pd
 import os
-import time
-import json
-import sys
-from pathlib import Path
 
 JST = ZoneInfo("Asia/Tokyo")
 LEAGUES = {"NWSL": "usa.nwsl", "WSL": "eng.w.1"}
@@ -39,6 +34,9 @@ STAT_NAME_CANDIDATES = {
     "diff":          ["pointDifferential", "goalDifferential", "differential"],
     "points":        ["points"],
 }
+
+
+import time
 
 
 def _get(url, params=None, max_retries=3, backoff_seconds=5):
@@ -319,6 +317,10 @@ def build_standings_leaders_html(data):
 # 代わりに、タイムスタンプを JSON ファイルの中身として明示的に保存し、
 # それを読んで比較する。
 
+import json
+import sys
+from pathlib import Path
+
 STATE_FILE = Path("data/state.json")
 # NWSL(米国)は西海岸の試合がJST正午〜午後にずれ込むため、特定の時刻を
 # 「本日分は確定した」基準にはできない。代わりに、前回更新からの経過時間で
@@ -388,24 +390,13 @@ def _should_update(state: dict | None, now: datetime) -> tuple[bool, str]:
 # ---------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--force",
-        action="store_true",
-        help="判定ロジックを無視して強制的に実行する",
-    )
-    args = parser.parse_args()
-
     now = datetime.now(JST)
+    state = _load_state()
 
-    if args.force:
-        print("強制実行オプション(--force)が指定されたため、判定をスキップして更新します。")
-    else:
-        state = _load_state()
-        should_update, reason = _should_update(state, now)
-        print(reason)
-        if not should_update:
-            sys.exit(0)
+    should_update, reason = _should_update(state, now)
+    print(reason)
+    if not should_update:
+        sys.exit(0)
 
     leaders_data = {}
     fixtures_data = {}
@@ -432,11 +423,38 @@ def main():
     <h1 style="font-size:20px; font-weight:700; color:#111; margin:0 0 4px;">NWSL / WSL ダッシュボード</h1>
     <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: {updated_at}</p>
 
-    {build_standings_leaders_html(leaders_data)}
+    <div style="display:flex; gap:8px; margin-bottom:16px; border-bottom:2px solid #ddd;">
+      <button id="tab-btn-standings" onclick="showTab('standings')"
+              style="font-size:14px; font-weight:700; padding:8px 16px; border:none; background:none; cursor:pointer; color:#888; border-bottom:3px solid transparent; margin-bottom:-2px;">
+        順位表・ランキング
+      </button>
+      <button id="tab-btn-schedule" onclick="showTab('schedule')"
+              style="font-size:14px; font-weight:700; padding:8px 16px; border:none; background:none; cursor:pointer; color:#2f6fb3; border-bottom:3px solid #2f6fb3; margin-bottom:-2px;">
+        日程・結果
+      </button>
+    </div>
 
-    <h2 style="font-size:16px; font-weight:700; color:#111; margin:24px 0 12px;">日程・結果</h2>
-    {build_timeline_html(fixtures_data["NWSL"], fixtures_data["WSL"])}
+    <div id="tab-standings" style="display:none;">
+      {build_standings_leaders_html(leaders_data)}
+    </div>
+
+    <div id="tab-schedule">
+      {build_timeline_html(fixtures_data["NWSL"], fixtures_data["WSL"])}
+    </div>
   </div>
+
+  <script>
+    function showTab(name) {{
+      const tabs = {{ standings: document.getElementById('tab-standings'), schedule: document.getElementById('tab-schedule') }};
+      const btns = {{ standings: document.getElementById('tab-btn-standings'), schedule: document.getElementById('tab-btn-schedule') }};
+      for (const key in tabs) {{
+        const active = key === name;
+        tabs[key].style.display = active ? 'block' : 'none';
+        btns[key].style.color = active ? '#2f6fb3' : '#888';
+        btns[key].style.borderBottom = active ? '3px solid #2f6fb3' : '3px solid transparent';
+      }}
+    }}
+  </script>
 </body>
 </html>'''
 
