@@ -374,7 +374,7 @@ def build_match_modal_html(all_match_details: dict) -> str:
 
         const goalCol = (side) => {{
           const items = d.goals.filter(g => g.team === side);
-          if (!items.length) return '<div style="font-size:12px; color:#bbb;">-</div>';
+          if (!items.length) return '<div style="font-size:12px; color:#bbb; text-align:left;">-</div>';
           return items.map(g => {{
             const og = g.own_goal ? ' (OG)' : '';
             return `<div style="font-size:13px; color:#222; padding:3px 0;">${{g.minute}} ${{g.scorer}}${{og}}</div>`;
@@ -382,16 +382,16 @@ def build_match_modal_html(all_match_details: dict) -> str:
         }};
 
         const lineupCol = (players) => players.length
-          ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0; text-align:center;">
+          ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0; text-align:left;">
                <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>
                <span style="display:inline-block; width:28px; color:#aaa; font-size:11px;">${{p.position ?? ''}}</span>${{p.name}}
              </div>`).join('')
-          : '<div style="font-size:12px; color:#888; text-align:center;">データなし</div>';
+          : '<div style="font-size:12px; color:#888; text-align:left;">データなし</div>';
 
         const subCol = (side) => {{
           const items = d.substitutions.filter(s => s.team === side);
-          if (!items.length) return '<div style="font-size:12px; color:#bbb;">-</div>';
-          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:center;">
+          if (!items.length) return '<div style="font-size:12px; color:#bbb; text-align:left;">-</div>';
+          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:left;">
               ${{s.minute}} <span style="color:#2f6fb3;">IN</span> ${{s.player_in}} / <span style="color:#b3392f;">OUT</span> ${{s.player_out}}
             </div>`).join('');
         }};
@@ -408,14 +408,14 @@ def build_match_modal_html(all_match_details: dict) -> str:
 
         document.getElementById('match-modal-body').innerHTML = `
           <div style="display:flex; gap:16px; margin-bottom:8px;">
-            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.home_name}}</div>
-            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.away_name}}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:left;">${{d.home_name}}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:left;">${{d.away_name}}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin:12px 0 6px; text-align:center;">得点</div>
           <div style="display:flex; gap:16px; margin-bottom:16px;">
-            <div style="flex:1; text-align:center;">${{goalCol('home')}}</div>
-            <div style="flex:1; text-align:center;">${{goalCol('away')}}</div>
+            <div style="flex:1; text-align:left;">${{goalCol('home')}}</div>
+            <div style="flex:1; text-align:left;">${{goalCol('away')}}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタメン</div>
@@ -426,8 +426,8 @@ def build_match_modal_html(all_match_details: dict) -> str:
 
           <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">選手交代</div>
           <div style="display:flex; gap:16px; margin-bottom:16px;">
-            <div style="flex:1; text-align:center;">${{subCol('home')}}</div>
-            <div style="flex:1; text-align:center;">${{subCol('away')}}</div>
+            <div style="flex:1; text-align:left;">${{subCol('home')}}</div>
+            <div style="flex:1; text-align:left;">${{subCol('away')}}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタッツ比較</div>
