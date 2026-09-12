@@ -13,6 +13,10 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import pandas as pd
 import os
+import json
+import sys
+import time
+from pathlib import Path
 
 JST = ZoneInfo("Asia/Tokyo")
 LEAGUES = {"NWSL": "usa.nwsl", "WSL": "eng.w.1"}
@@ -34,9 +38,6 @@ STAT_NAME_CANDIDATES = {
     "diff":          ["pointDifferential", "goalDifferential", "differential"],
     "points":        ["points"],
 }
-
-
-import time
 
 
 def _get(url, params=None, max_retries=3, backoff_seconds=5):
@@ -116,6 +117,7 @@ def get_fixtures(league_name: str, days_back: int = 14, days_forward: int = 21) 
         status = comp.get("status", {}).get("type", {})
         is_done = status.get("completed", False)
         rows.append({
+            "event_id": ev.get("id"),
             "日時(JST)": _to_jst_str(ev.get("date")),
             "ホーム": home.get("team", {}).get("displayName"),
             "アウェイ": away.get("team", {}).get("displayName"),
@@ -149,7 +151,88 @@ def get_leaders(league_name: str, category: str = "goalsLeaders") -> pd.DataFram
 
 
 # ---------------------------------------------------------
-# HTML生成: 日程タイムライン
+# データ取得: 試合詳細(スタメン・得点者/時刻・チームスタッツ)
+# ---------------------------------------------------------
+
+# 28項目あるチームスタッツのうち、表示する主要項目を選定
+KEY_STAT_NAMES = [
+    ("possessionPct", "支配率", "%"),
+    ("totalShots", "シュート", ""),
+    ("shotsOnTarget", "枠内シュート", ""),
+    ("totalPasses", "パス数", ""),
+    ("passPct", "パス成功率", ""),
+    ("wonCorners", "コーナー", ""),
+    ("foulsCommitted", "ファウル", ""),
+    ("yellowCards", "警告", ""),
+    ("redCards", "退場", ""),
+]
+
+
+def get_match_details(league_name: str, event_id: str, home_name: str, away_name: str) -> dict | None:
+    slug = LEAGUES[league_name]
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/summary"
+    try:
+        data = _get(url, params={"event": event_id})
+    except Exception as e:
+        print(f"  [警告] 試合詳細の取得に失敗しました(event_id={event_id}): {e}")
+        return None
+
+    # --- スタメン(ホーム/アウェイをチーム名で突き合わせる) ---
+    lineups = {"home": [], "away": []}
+    for roster in data.get("rosters", []):
+        team_name = roster.get("team", {}).get("displayName")
+        starters = [
+            p.get("athlete", {}).get("displayName")
+            for p in roster.get("roster", [])
+            if p.get("starter")
+        ]
+        if team_name == home_name:
+            lineups["home"] = starters
+        elif team_name == away_name:
+            lineups["away"] = starters
+
+    # --- 得点者・得点時刻 ---
+    goals = []
+    for ev in data.get("keyEvents", []):
+        if not ev.get("scoringPlay"):
+            continue
+        participants = ev.get("participants", [])
+        scorer = participants[0].get("athlete", {}).get("displayName") if participants else None
+        team_name = ev.get("team", {}).get("displayName")
+        goals.append({
+            "minute": ev.get("clock", {}).get("displayValue"),
+            "scorer": scorer,
+            "team": "home" if team_name == home_name else "away",
+            "own_goal": ev.get("type", {}).get("type") == "own-goal",
+        })
+    goals.sort(key=lambda g: g["minute"] or "")
+
+    # --- チームスタッツ(主要項目のみ抽出、ホーム/アウェイをチーム名で突き合わせ) ---
+    stats = {"home": {}, "away": {}}
+    for team_box in data.get("boxscore", {}).get("teams", []):
+        team_name = team_box.get("team", {}).get("displayName")
+        side = "home" if team_name == home_name else ("away" if team_name == away_name else None)
+        if side is None:
+            continue
+        stat_map = {s.get("name"): s.get("displayValue") for s in team_box.get("statistics", [])}
+        for key, _, _ in KEY_STAT_NAMES:
+            stats[side][key] = stat_map.get(key)
+
+    return {
+        "home_name": home_name, "away_name": away_name,
+        "lineups": lineups, "goals": goals, "stats": stats,
+    }
+
+
+def get_all_match_details(league_name: str, fixtures_df: pd.DataFrame) -> dict:
+    """終了済みの試合すべてについて詳細を取得し、event_idをキーにした辞書で返す"""
+    details = {}
+    completed = fixtures_df[fixtures_df["状況"] == "Full Time"]
+    for _, row in completed.iterrows():
+        detail = get_match_details(league_name, row["event_id"], row["ホーム"], row["アウェイ"])
+        if detail is not None:
+            details[row["event_id"]] = detail
+    return details
 # ---------------------------------------------------------
 
 def _fixtures_to_date_dict(fixtures_df):
@@ -158,6 +241,7 @@ def _fixtures_to_date_dict(fixtures_df):
         dt = _parse_dt(row["日時(JST)"])
         date_label = dt.strftime("%m/%d")
         result.setdefault(date_label, []).append({
+            "event_id": row["event_id"],
             "home": row["ホーム"], "away": row["アウェイ"], "score": row["スコア"],
             "time": dt.strftime("%H:%M"), "done": row["状況"] == "Full Time",
         })
@@ -166,11 +250,13 @@ def _fixtures_to_date_dict(fixtures_df):
 
 def _match_card_html(m):
     border = "#999999" if m["done"] else "#cccccc"
+    cursor = "pointer" if m["done"] else "default"
+    onclick = f' onclick="openMatchModal(\'{m["event_id"]}\')"' if m["done"] else ""
     if m["done"]:
         score_html = f'<div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">{m["score"]}</div>'
     else:
         score_html = f'<div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">{m["time"]}〜</div>'
-    return f'''<div style="border:1px solid {border}; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px;">
+    return f'''<div{onclick} style="border:1px solid {border}; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:{cursor};">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["home"]}</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["away"]}</div>
         {score_html}
@@ -235,6 +321,80 @@ def build_timeline_html(nwsl_df, wsl_df):
           {league_row_html("WSL", wsl_by_date)}
         </div>
       </div>'''
+
+
+STAT_LABELS = [(key, label) for key, label, _ in KEY_STAT_NAMES]
+
+
+def build_match_modal_html(all_match_details: dict) -> str:
+    """全リーグ分の試合詳細を1つのJSオブジェクトとして埋め込み、
+    クリックでモーダル表示するためのHTML+JSを返す"""
+    stat_labels_json = json.dumps(STAT_LABELS, ensure_ascii=False)
+    details_json = json.dumps(all_match_details, ensure_ascii=False)
+
+    return f'''
+    <div id="match-modal-overlay" onclick="if(event.target===this) closeMatchModal()"
+         style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:100; align-items:center; justify-content:center;">
+      <div style="background:#ffffff; border-radius:10px; padding:20px; width:90%; max-width:520px; max-height:85vh; overflow-y:auto;">
+        <div style="display:flex; justify-content:flex-end;">
+          <button onclick="closeMatchModal()" style="border:none; background:none; font-size:18px; cursor:pointer; color:#888;">×</button>
+        </div>
+        <div id="match-modal-body"></div>
+      </div>
+    </div>
+
+    <script>
+      const MATCH_DETAILS = {details_json};
+      const STAT_LABELS = {stat_labels_json};
+
+      function openMatchModal(eventId) {{
+        const d = MATCH_DETAILS[eventId];
+        if (!d) return;
+
+        const goalsHtml = d.goals.length ? d.goals.map(g => {{
+          const side = g.team === 'home' ? d.home_name : d.away_name;
+          const og = g.own_goal ? '(OG)' : '';
+          return `<div style="font-size:13px; color:#222; padding:3px 0;">${{g.minute}} — ${{g.scorer}}${{og}} <span style="color:#888;">(${{side}})</span></div>`;
+        }}).join('') : '<div style="font-size:13px; color:#888;">得点なし</div>';
+
+        const lineupCol = (names) => names.length
+          ? names.map(n => `<div style="font-size:12px; color:#222; padding:2px 0;">${{n}}</div>`).join('')
+          : '<div style="font-size:12px; color:#888;">データなし</div>';
+
+        const statsRows = STAT_LABELS.map(([key, label]) => {{
+          const h = d.stats.home[key] ?? '-';
+          const a = d.stats.away[key] ?? '-';
+          return `<tr>
+            <td style="font-size:13px; font-weight:600; color:#222; padding:4px 8px; text-align:right; width:35%;">${{h}}</td>
+            <td style="font-size:12px; color:#888; padding:4px 8px; text-align:center; width:30%;">${{label}}</td>
+            <td style="font-size:13px; font-weight:600; color:#222; padding:4px 8px; text-align:left; width:35%;">${{a}}</td>
+          </tr>`;
+        }}).join('');
+
+        document.getElementById('match-modal-body').innerHTML = `
+          <h2 style="font-size:16px; font-weight:700; color:#111; margin:0 0 14px;">${{d.home_name}} vs ${{d.away_name}}</h2>
+
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px;">得点</div>
+          <div style="margin-bottom:16px;">${{goalsHtml}}</div>
+
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px;">スタメン</div>
+          <div style="display:flex; gap:16px; margin-bottom:16px;">
+            <div style="flex:1;"><div style="font-size:11px; color:#888; margin-bottom:4px;">${{d.home_name}}</div>${{lineupCol(d.lineups.home)}}</div>
+            <div style="flex:1;"><div style="font-size:11px; color:#888; margin-bottom:4px;">${{d.away_name}}</div>${{lineupCol(d.lineups.away)}}</div>
+          </div>
+
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px;">スタッツ比較</div>
+          <table style="width:100%; border-collapse:collapse;"><tbody>${{statsRows}}</tbody></table>
+        `;
+
+        document.getElementById('match-modal-overlay').style.display = 'flex';
+      }}
+
+      function closeMatchModal() {{
+        document.getElementById('match-modal-overlay').style.display = 'none';
+      }}
+    </script>
+    '''
 
 
 # ---------------------------------------------------------
@@ -316,10 +476,6 @@ def build_standings_leaders_html(data):
 # 判定はGitHub Actions上では機能しない。
 # 代わりに、タイムスタンプを JSON ファイルの中身として明示的に保存し、
 # それを読んで比較する。
-
-import json
-import sys
-from pathlib import Path
 
 STATE_FILE = Path("data/state.json")
 # NWSL(米国)は西海岸の試合がJST正午〜午後にずれ込むため、特定の時刻を
@@ -409,6 +565,13 @@ def main():
         }
         fixtures_data[league] = get_fixtures(league)
 
+    # 終了済み試合の詳細(スタメン・得点者/時刻・スタッツ)をまとめて取得
+    all_match_details = {}
+    for league in LEAGUES:
+        print(f"{league}の試合詳細を取得中...")
+        league_details = get_all_match_details(league, fixtures_data[league])
+        all_match_details.update(league_details)
+
     updated_at = now.strftime("%Y-%m-%d %H:%M JST")
 
     html = f'''<!DOCTYPE html>
@@ -442,6 +605,8 @@ def main():
       {build_timeline_html(fixtures_data["NWSL"], fixtures_data["WSL"])}
     </div>
   </div>
+
+  {build_match_modal_html(all_match_details)}
 
   <script>
     function showTab(name) {{
