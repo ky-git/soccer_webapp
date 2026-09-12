@@ -182,7 +182,11 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
     for roster in data.get("rosters", []):
         team_name = roster.get("team", {}).get("displayName")
         starters = [
-            {"name": p.get("athlete", {}).get("displayName"), "jersey": p.get("jersey")}
+            {
+                "name": p.get("athlete", {}).get("displayName"),
+                "jersey": p.get("jersey"),
+                "position": p.get("position", {}).get("abbreviation"),
+            }
             for p in roster.get("roster", [])
             if p.get("starter")
         ]
@@ -207,6 +211,23 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
         })
     goals.sort(key=lambda g: g["minute"] or "")
 
+    # --- 選手交代(participants[0]=IN, participants[1]=OUT) ---
+    substitutions = []
+    for ev in data.get("keyEvents", []):
+        if ev.get("type", {}).get("type") != "substitution":
+            continue
+        participants = ev.get("participants", [])
+        if len(participants) < 2:
+            continue
+        team_name = ev.get("team", {}).get("displayName")
+        substitutions.append({
+            "minute": ev.get("clock", {}).get("displayValue"),
+            "player_in": participants[0].get("athlete", {}).get("displayName"),
+            "player_out": participants[1].get("athlete", {}).get("displayName"),
+            "team": "home" if team_name == home_name else "away",
+        })
+    substitutions.sort(key=lambda s: s["minute"] or "")
+
     # --- チームスタッツ(主要項目のみ抽出、ホーム/アウェイをチーム名で突き合わせ) ---
     stats = {"home": {}, "away": {}}
     for team_box in data.get("boxscore", {}).get("teams", []):
@@ -220,7 +241,7 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
 
     return {
         "home_name": home_name, "away_name": away_name,
-        "lineups": lineups, "goals": goals, "stats": stats,
+        "lineups": lineups, "goals": goals, "substitutions": substitutions, "stats": stats,
     }
 
 
@@ -362,9 +383,18 @@ def build_match_modal_html(all_match_details: dict) -> str:
 
         const lineupCol = (players) => players.length
           ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0;">
-               <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>${{p.name}}
+               <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>
+               <span style="display:inline-block; width:28px; color:#aaa; font-size:11px;">${{p.position ?? ''}}</span>${{p.name}}
              </div>`).join('')
           : '<div style="font-size:12px; color:#888;">データなし</div>';
+
+        const subCol = (side) => {{
+          const items = d.substitutions.filter(s => s.team === side);
+          if (!items.length) return '<div style="font-size:12px; color:#bbb;">-</div>';
+          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0;">
+              ${{s.minute}} <span style="color:#2f6fb3;">IN</span> ${{s.player_in}} / <span style="color:#b3392f;">OUT</span> ${{s.player_out}}
+            </div>`).join('');
+        }};
 
         const statsRows = STAT_LABELS.map(([key, label]) => {{
           const h = d.stats.home[key] ?? '-';
@@ -394,6 +424,12 @@ def build_match_modal_html(all_match_details: dict) -> str:
           <div style="display:flex; gap:16px; margin-bottom:16px;">
             <div style="flex:1;">${{lineupCol(d.lineups.home)}}</div>
             <div style="flex:1;">${{lineupCol(d.lineups.away)}}</div>
+          </div>
+
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">選手交代</div>
+          <div style="display:flex; gap:16px; margin-bottom:16px;">
+            <div style="flex:1; text-align:center;">${{subCol('home')}}</div>
+            <div style="flex:1; text-align:center;">${{subCol('away')}}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタッツ比較</div>
