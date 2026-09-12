@@ -177,23 +177,27 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
         print(f"  [警告] 試合詳細の取得に失敗しました(event_id={event_id}): {e}")
         return None
 
-    # --- スタメン(ホーム/アウェイをチーム名で突き合わせる) ---
-    lineups = {"home": [], "away": []}
+    # --- 出場選手(ホーム/アウェイをチーム名で突き合わせる) ---
+    # 交代情報を各スタメンの行に統合するため、控え選手も含めた「選手ID -> 背番号/名前」の
+    # マップを先に作っておく
+    jersey_by_athlete_id = {}
+    starters_by_side = {"home": [], "away": []}
     for roster in data.get("rosters", []):
         team_name = roster.get("team", {}).get("displayName")
-        starters = [
-            {
-                "name": p.get("athlete", {}).get("displayName"),
-                "jersey": p.get("jersey"),
-                "position": p.get("position", {}).get("abbreviation"),
-            }
-            for p in roster.get("roster", [])
-            if p.get("starter")
-        ]
-        if team_name == home_name:
-            lineups["home"] = starters
-        elif team_name == away_name:
-            lineups["away"] = starters
+        side = "home" if team_name == home_name else ("away" if team_name == away_name else None)
+        starters = []
+        for p in roster.get("roster", []):
+            athlete_id = p.get("athlete", {}).get("id")
+            jersey_by_athlete_id[athlete_id] = p.get("jersey")
+            if p.get("starter"):
+                starters.append({
+                    "athlete_id": athlete_id,
+                    "name": p.get("athlete", {}).get("displayName"),
+                    "jersey": p.get("jersey"),
+                    "position": p.get("position", {}).get("abbreviation"),
+                })
+        if side:
+            starters_by_side[side] = starters
 
     # --- 得点者・得点時刻 ---
     goals = []
@@ -212,21 +216,31 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
     goals.sort(key=lambda g: g["minute"] or "")
 
     # --- 選手交代(participants[0]=IN, participants[1]=OUT) ---
-    substitutions = []
+    # 交代でOUTした選手のathlete_idをキーに、IN選手の情報を引けるようにしておく
+    sub_by_out_id = {}
     for ev in data.get("keyEvents", []):
         if ev.get("type", {}).get("type") != "substitution":
             continue
         participants = ev.get("participants", [])
         if len(participants) < 2:
             continue
-        team_name = ev.get("team", {}).get("displayName")
-        substitutions.append({
+        in_athlete = participants[0].get("athlete", {})
+        out_athlete = participants[1].get("athlete", {})
+        sub_by_out_id[out_athlete.get("id")] = {
+            "name": in_athlete.get("displayName"),
+            "jersey": jersey_by_athlete_id.get(in_athlete.get("id")),
             "minute": ev.get("clock", {}).get("displayValue"),
-            "player_in": participants[0].get("athlete", {}).get("displayName"),
-            "player_out": participants[1].get("athlete", {}).get("displayName"),
-            "team": "home" if team_name == home_name else "away",
-        })
-    substitutions.sort(key=lambda s: s["minute"] or "")
+        }
+
+    # --- 出場選手一覧に交代情報を統合 ---
+    lineups = {"home": [], "away": []}
+    for side, starters in starters_by_side.items():
+        for s in starters:
+            sub_in = sub_by_out_id.get(s["athlete_id"])
+            lineups[side].append({
+                "name": s["name"], "jersey": s["jersey"], "position": s["position"],
+                "sub_in": sub_in,
+            })
 
     # --- チームスタッツ(主要項目のみ抽出、ホーム/アウェイをチーム名で突き合わせ) ---
     stats = {"home": {}, "away": {}}
@@ -241,7 +255,7 @@ def get_match_details(league_name: str, event_id: str, home_name: str, away_name
 
     return {
         "home_name": home_name, "away_name": away_name,
-        "lineups": lineups, "goals": goals, "substitutions": substitutions, "stats": stats,
+        "lineups": lineups, "goals": goals, "stats": stats,
     }
 
 
@@ -382,19 +396,16 @@ def build_match_modal_html(all_match_details: dict) -> str:
         }};
 
         const lineupCol = (players) => players.length
-          ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0; text-align:left;">
-               <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>
-               <span style="display:inline-block; width:28px; color:#aaa; font-size:11px;">${{p.position ?? ''}}</span>${{p.name}}
-             </div>`).join('')
+          ? players.map(p => {{
+              const subHtml = p.sub_in
+                ? ` -&gt; <span style="color:#888;">${{p.sub_in.jersey ?? ''}}</span> ${{p.sub_in.name}} (${{p.sub_in.minute}})`
+                : '';
+              return `<div style="font-size:12px; color:#222; padding:2px 0; text-align:left; white-space:nowrap; overflow-x:auto;">
+                 <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>
+                 <span style="display:inline-block; width:28px; color:#aaa; font-size:11px;">${{p.position ?? ''}}</span>${{p.name}}${{subHtml}}
+               </div>`;
+            }}).join('')
           : '<div style="font-size:12px; color:#888; text-align:left;">データなし</div>';
-
-        const subCol = (side) => {{
-          const items = d.substitutions.filter(s => s.team === side);
-          if (!items.length) return '<div style="font-size:12px; color:#bbb; text-align:left;">-</div>';
-          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:left; white-space:nowrap; overflow-x:auto;">
-              ${{s.minute}} <span style="color:#2f6fb3;">IN</span> ${{s.player_in}} / <span style="color:#b3392f;">OUT</span> ${{s.player_out}}
-            </div>`).join('');
-        }};
 
         const statsRows = STAT_LABELS.map(([key, label]) => {{
           const h = d.stats.home[key] ?? '-';
@@ -418,16 +429,10 @@ def build_match_modal_html(all_match_details: dict) -> str:
             <div style="flex:1; text-align:left;">${{goalCol('away')}}</div>
           </div>
 
-          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタメン</div>
+          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">出場選手</div>
           <div style="display:flex; gap:16px; margin-bottom:16px;">
             <div style="flex:1;">${{lineupCol(d.lineups.home)}}</div>
             <div style="flex:1;">${{lineupCol(d.lineups.away)}}</div>
-          </div>
-
-          <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">選手交代</div>
-          <div style="display:flex; gap:16px; margin-bottom:16px;">
-            <div style="flex:1; text-align:left;">${{subCol('home')}}</div>
-            <div style="flex:1; text-align:left;">${{subCol('away')}}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin-bottom:6px; text-align:center;">スタッツ比較</div>
