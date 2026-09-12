@@ -576,7 +576,15 @@ def _should_update(state: dict | None, now: datetime) -> tuple[bool, str]:
     if elapsed_hours >= MAX_STALE_HOURS:
         return True, f"前回更新から{elapsed_hours:.1f}時間経過(基準:{MAX_STALE_HOURS}時間)のため更新します"
 
-    # 条件A: 前回の更新以降に「終了しているはず」の試合がある
+    # 条件A: 未終了のまま記録されている試合で、推定終了時刻をすでに過ぎているものがある
+    # ※ 以前は「last_update < 推定終了時刻 <= now」という判定だったが、これだと
+    #   「推定終了時刻を過ぎた時点でまだFull Timeと確定していなかった試合」が
+    #   一度スナップショットに保存されると、以後 推定終了時刻 が過去に固定されたまま
+    #   last_update だけが進んでいくため、二度と条件を満たせなくなる不具合があった。
+    #   (例: 延長・アディショナルタイムやデータ反映の遅れで、推定終了時刻ちょうどには
+    #    まだ試合が終わっていなかったケース)
+    #   「今すでに推定終了時刻を過ぎているか」だけを見る形にすることで、
+    #   Full Timeと確定するまで毎時再チェックし続けるようにする。
     snapshot = state.get("fixtures_snapshot", {})
     for league, rows in snapshot.items():
         for row in rows:
@@ -587,7 +595,7 @@ def _should_update(state: dict | None, now: datetime) -> tuple[bool, str]:
             except (KeyError, ValueError):
                 continue
             estimated_end = kickoff + pd.Timedelta(minutes=MATCH_DURATION_MINUTES)
-            if last_update < estimated_end <= now:
+            if estimated_end <= now:
                 return True, f"{league}で終了しているはずの試合を検知したため更新します({row.get('ホーム')} vs {row.get('アウェイ')})"
 
     return False, "更新条件に該当しないためスキップします"
