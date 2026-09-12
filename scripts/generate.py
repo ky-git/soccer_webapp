@@ -382,16 +382,16 @@ def build_match_modal_html(all_match_details: dict) -> str:
         }};
 
         const lineupCol = (players) => players.length
-          ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0;">
+          ? players.map(p => `<div style="font-size:12px; color:#222; padding:2px 0; text-align:center;">
                <span style="display:inline-block; width:22px; color:#888;">${{p.jersey ?? ''}}</span>
                <span style="display:inline-block; width:28px; color:#aaa; font-size:11px;">${{p.position ?? ''}}</span>${{p.name}}
              </div>`).join('')
-          : '<div style="font-size:12px; color:#888;">データなし</div>';
+          : '<div style="font-size:12px; color:#888; text-align:center;">データなし</div>';
 
         const subCol = (side) => {{
           const items = d.substitutions.filter(s => s.team === side);
           if (!items.length) return '<div style="font-size:12px; color:#bbb;">-</div>';
-          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0;">
+          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:center;">
               ${{s.minute}} <span style="color:#2f6fb3;">IN</span> ${{s.player_in}} / <span style="color:#b3392f;">OUT</span> ${{s.player_out}}
             </div>`).join('');
         }};
@@ -407,8 +407,6 @@ def build_match_modal_html(all_match_details: dict) -> str:
         }}).join('');
 
         document.getElementById('match-modal-body').innerHTML = `
-          <h2 style="font-size:16px; font-weight:700; color:#111; text-align:center; margin:0 0 16px;">${{d.home_name}} vs ${{d.away_name}}</h2>
-
           <div style="display:flex; gap:16px; margin-bottom:8px;">
             <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.home_name}}</div>
             <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${{d.away_name}}</div>
