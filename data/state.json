@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-12T20:59:57.211888+09:00",
+  "last_full_update": "2026-09-12T21:04:23.291608+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -426,7 +426,7 @@
         "ホーム": "West Ham United",
         "アウェイ": "London City Lionesses",
         "スコア": "未消化",
-        "状況": "First Half"
+        "状況": "Scheduled"
       },
       {
         "event_id": "401902920",
