@@ -8,7 +8,7 @@
 <body style="margin:0; background:#f7f7f5;">
   <div style="font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif; background:#f7f7f5; color:#111; padding:24px; max-width:1100px; margin:0 auto;">
     <h1 style="font-size:20px; font-weight:700; color:#111; margin:0 0 4px;">NWSL / WSL ダッシュボード</h1>
-    <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: 2026-09-12 21:29 JST</p>
+    <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: 2026-09-12 21:34 JST</p>
 
     <div style="display:flex; gap:8px; margin-bottom:16px; border-bottom:2px solid #ddd;">
       <button id="tab-btn-standings" onclick="showTab('standings')"
@@ -732,7 +732,7 @@
         const subCol = (side) => {
           const items = d.substitutions.filter(s => s.team === side);
           if (!items.length) return '<div style="font-size:12px; color:#bbb; text-align:left;">-</div>';
-          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:left;">
+          return items.map(s => `<div style="font-size:12px; color:#222; padding:3px 0; text-align:left; white-space:nowrap; overflow-x:auto;">
               ${s.minute} <span style="color:#2f6fb3;">IN</span> ${s.player_in} / <span style="color:#b3392f;">OUT</span> ${s.player_out}
             </div>`).join('');
         };
@@ -749,8 +749,8 @@
 
         document.getElementById('match-modal-body').innerHTML = `
           <div style="display:flex; gap:16px; margin-bottom:8px;">
-            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:left;">${d.home_name}</div>
-            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:left;">${d.away_name}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${d.home_name}</div>
+            <div style="flex:1; font-size:12px; font-weight:700; color:#111; text-align:center;">${d.away_name}</div>
           </div>
 
           <div style="font-size:13px; font-weight:700; color:#111; margin:12px 0 6px; text-align:center;">得点</div>
