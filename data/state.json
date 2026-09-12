@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-12T23:10:12.319211+09:00",
+  "last_full_update": "2026-09-13T08:09:10.819187+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -144,7 +144,7 @@
         "ホーム": "San Diego Wave FC",
         "アウェイ": "North Carolina Courage",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "First Half"
       },
       {
         "event_id": "401853998",
@@ -425,8 +425,8 @@
         "日時(JST)": "2026-09-12 20:45 JST",
         "ホーム": "West Ham United",
         "アウェイ": "London City Lionesses",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "2 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902920",
