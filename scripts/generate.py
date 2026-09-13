@@ -652,22 +652,30 @@ def main():
     <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: {updated_at}</p>
 
     <div style="display:flex; gap:8px; margin-bottom:16px; border-bottom:2px solid #ddd;">
-      <button id="tab-btn-standings" onclick="showTab('standings')"
-              style="font-size:14px; font-weight:700; padding:8px 16px; border:none; background:none; cursor:pointer; color:#888; border-bottom:3px solid transparent; margin-bottom:-2px;">
-        順位表・ランキング
-      </button>
       <button id="tab-btn-schedule" onclick="showTab('schedule')"
               style="font-size:14px; font-weight:700; padding:8px 16px; border:none; background:none; cursor:pointer; color:#2f6fb3; border-bottom:3px solid #2f6fb3; margin-bottom:-2px;">
         日程・結果
       </button>
-    </div>
-
-    <div id="tab-standings" style="display:none;">
-      {build_standings_leaders_html(leaders_data)}
+      <button id="tab-btn-nwsl" onclick="showTab('nwsl')"
+              style="font-size:14px; font-weight:700; padding:8px 16px; border:none; background:none; cursor:pointer; color:#888; border-bottom:3px solid transparent; margin-bottom:-2px;">
+        順位 NWSL
+      </button>
+      <button id="tab-btn-wsl" onclick="showTab('wsl')"
+              style="font-size:14px; font-weight:700; padding:8px 16px; border:none; background:none; cursor:pointer; color:#888; border-bottom:3px solid transparent; margin-bottom:-2px;">
+        順位 WSL
+      </button>
     </div>
 
     <div id="tab-schedule">
       {build_timeline_html(fixtures_data["NWSL"], fixtures_data["WSL"])}
+    </div>
+
+    <div id="tab-nwsl" style="display:none;">
+      {_league_block_html("NWSL", leaders_data["NWSL"]["standings"], leaders_data["NWSL"]["goals"], leaders_data["NWSL"]["assists"])}
+    </div>
+
+    <div id="tab-wsl" style="display:none;">
+      {_league_block_html("WSL", leaders_data["WSL"]["standings"], leaders_data["WSL"]["goals"], leaders_data["WSL"]["assists"])}
     </div>
   </div>
 
@@ -675,8 +683,8 @@ def main():
 
   <script>
     function showTab(name) {{
-      const tabs = {{ standings: document.getElementById('tab-standings'), schedule: document.getElementById('tab-schedule') }};
-      const btns = {{ standings: document.getElementById('tab-btn-standings'), schedule: document.getElementById('tab-btn-schedule') }};
+      const tabs = {{ schedule: document.getElementById('tab-schedule'), nwsl: document.getElementById('tab-nwsl'), wsl: document.getElementById('tab-wsl') }};
+      const btns = {{ schedule: document.getElementById('tab-btn-schedule'), nwsl: document.getElementById('tab-btn-nwsl'), wsl: document.getElementById('tab-btn-wsl') }};
       for (const key in tabs) {{
         const active = key === name;
         tabs[key].style.display = active ? 'block' : 'none';
