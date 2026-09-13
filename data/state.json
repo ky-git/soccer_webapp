@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-13T10:02:43.962142+09:00",
+  "last_full_update": "2026-09-13T15:12:56.443793+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -127,16 +127,16 @@
         "日時(JST)": "2026-09-13 09:00 JST",
         "ホーム": "Seattle Reign FC",
         "アウェイ": "Bay FC",
-        "スコア": "未消化",
-        "状況": "In Progress"
+        "スコア": "2 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854000",
         "日時(JST)": "2026-09-13 09:45 JST",
         "ホーム": "Houston Dash",
         "アウェイ": "Utah Royals",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "0 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854083",
