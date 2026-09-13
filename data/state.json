@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-14T04:29:20.156970+09:00",
+  "last_full_update": "2026-09-14T07:25:54.870329+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -143,8 +143,8 @@
         "日時(JST)": "2026-09-14 02:00 JST",
         "ホーム": "Washington Spirit",
         "アウェイ": "Boston Legacy FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "0 - 3",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854001",
@@ -473,8 +473,8 @@
         "日時(JST)": "2026-09-14 02:30 JST",
         "ホーム": "Aston Villa",
         "アウェイ": "Manchester City",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 4",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902914",
