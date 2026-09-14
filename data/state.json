@@ -1,23 +1,7 @@
 {
-  "last_full_update": "2026-09-14T07:25:54.870329+09:00",
+  "last_full_update": "2026-09-14T10:08:05.044921+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401853988",
-        "日時(JST)": "2026-08-31 01:30 JST",
-        "ホーム": "Washington Spirit",
-        "アウェイ": "Bay FC",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401853989",
-        "日時(JST)": "2026-08-31 08:00 JST",
-        "ホーム": "Seattle Reign FC",
-        "アウェイ": "Houston Dash",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854079",
         "日時(JST)": "2026-09-01 09:00 JST",
@@ -151,8 +135,8 @@
         "日時(JST)": "2026-09-14 08:00 JST",
         "ホーム": "Portland Thorns FC",
         "アウェイ": "Chicago Stars FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854084",
