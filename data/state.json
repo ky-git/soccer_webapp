@@ -1,15 +1,7 @@
 {
-  "last_full_update": "2026-09-15T08:09:22.853381+09:00",
+  "last_full_update": "2026-09-16T06:25:41.031254+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854079",
-        "日時(JST)": "2026-09-01 09:00 JST",
-        "ホーム": "Boston Legacy FC",
-        "アウェイ": "Angel City FC",
-        "スコア": "2 - 5",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854080",
         "日時(JST)": "2026-09-05 10:30 JST",
