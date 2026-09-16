@@ -316,16 +316,19 @@ def _fixtures_to_date_dict(fixtures_df):
 
 
 def _match_card_html(m):
-    border = "#999999" if m["done"] else "#cccccc"
     cursor = "pointer" if m["done"] else "default"
     onclick = f' onclick="openMatchModal(\'{m["event_id"]}\')"' if m["done"] else ""
-    # 終了済みの試合は右側に赤いマーカーを付け、一目で「終了済み」と分かるようにする
-    right_marker = "border-right:4px solid #d33333;" if m["done"] else ""
+    # 終了済みの試合は、枠線ではなくカード全体の背景色で示す
+    # (枠線の太さを変える方式は、box-sizingの都合でカード幅がズレて隣と重なる不具合があったため)
     if m["done"]:
+        border = "#cccccc"
+        bg = "#eef0f2"
         score_html = f'<div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">{m["score"]}</div>'
     else:
+        border = "#cccccc"
+        bg = "#ffffff"
         score_html = f'<div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">{m["time"]}〜</div>'
-    return f'''<div{onclick} style="border:1px solid {border}; {right_marker} border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:{cursor};">
+    return f'''<div{onclick} style="box-sizing:border-box; border:1px solid {border}; border-radius:6px; padding:7px 9px; background:{bg}; width:150px; cursor:{cursor};">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["home"]}</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["away"]}</div>
         {score_html}
@@ -351,6 +354,20 @@ def build_timeline_html(nwsl_df, wsl_df):
             f'border-radius:4px 4px 0 0; border-bottom:2px solid #999;">{d}</div>' for d in all_dates)
         return f'<div style="display:flex; gap:8px; margin-left:70px; margin-top:14px;">{cells}</div>'
 
+    def now_line_html():
+        col_w, gap, label_w = COL_W, 8, 70
+        today = datetime.now(JST)
+        today_val = today.month * 100 + today.day
+        idx = len(all_dates)
+        for i, d in enumerate(all_dates):
+            m, day = d.split("/")
+            if int(m) * 100 + int(day) >= today_val:
+                idx = i
+                break
+        line_left = label_w + idx * (col_w + gap) - gap / 2
+        return f'''<div style="position:absolute; left:{line_left}px; top:0; bottom:0; width:2px; background:#d33333; z-index:1;"></div>
+        <div style="position:absolute; left:{line_left}px; top:-22px; transform:translateX(-50%); font-size:11px; font-weight:700; color:#ffffff; background:#d33333; padding:2px 7px; border-radius:3px; white-space:nowrap; z-index:2;">現在</div>'''
+
     def league_row_html(label, by_date):
         style = LEAGUE_STYLE[label]
         cells = []
@@ -370,6 +387,7 @@ def build_timeline_html(nwsl_df, wsl_df):
 
     return f'''<div style="overflow-x:auto; overflow-y:visible; padding:24px 16px 16px; background:#ffffff; border:1px solid #ddd; border-radius:8px;">
         <div style="position:relative; display:inline-block; min-width:100%;">
+          {now_line_html()}
           {date_header_html()}
           {league_row_html("NWSL", nwsl_by_date)}
           {league_row_html("WSL", wsl_by_date)}
