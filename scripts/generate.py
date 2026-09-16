@@ -162,6 +162,35 @@ def get_fixtures(league_name: str, days_back: int = 14, days_forward: int = 21) 
     return df
 
 
+def _is_too_light(hex_color: str) -> bool:
+    """白に近い薄い色かどうかを簡易的な輝度計算で判定する(可読性フォールバック用)"""
+    try:
+        hex_color = hex_color.lstrip("#")
+        r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+    except (ValueError, IndexError):
+        return True
+    luminance = 0.299 * r + 0.587 * g + 0.114 * b
+    return luminance > 200  # 200/255程度より明るい場合は読みにくいと判断
+
+
+def get_team_colors(league_name: str) -> dict:
+    """チーム名 -> '#RRGGBB' のチームカラーを返す。明るすぎる色はデフォルト色にフォールバック"""
+    slug = LEAGUES[league_name]
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/teams"
+    data = _get(url)
+
+    colors = {}
+    for sport in data.get("sports", []):
+        for league in sport.get("leagues", []):
+            for entry in league.get("teams", []):
+                team = entry.get("team", {})
+                name = team.get("displayName")
+                color = team.get("color")
+                if name and color and not _is_too_light(color):
+                    colors[name] = f"#{color}"
+    return colors
+
+
 def get_leaders(league_name: str, category: str = "goalsLeaders") -> pd.DataFrame:
     slug = LEAGUES[league_name]
     url = f"https://site.web.api.espn.com/apis/site/v2/sports/soccer/{slug}/statistics"
@@ -315,9 +344,11 @@ def _fixtures_to_date_dict(fixtures_df):
     return result
 
 
-def _match_card_html(m):
+def _match_card_html(m, team_colors):
     cursor = "pointer" if m["done"] else "default"
     onclick = f' onclick="openMatchModal(\'{m["event_id"]}\')"' if m["done"] else ""
+    home_color = team_colors.get(m["home"], "#222222")
+    away_color = team_colors.get(m["away"], "#222222")
     # 終了済みの試合は、枠線ではなくカード全体の背景色で示す
     # (枠線の太さを変える方式は、box-sizingの都合でカード幅がズレて隣と重なる不具合があったため)
     if m["done"]:
@@ -329,13 +360,14 @@ def _match_card_html(m):
         bg = "#ffffff"
         score_html = f'<div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">{m["time"]}〜</div>'
     return f'''<div{onclick} style="box-sizing:border-box; border:1px solid {border}; border-radius:6px; padding:7px 9px; background:{bg}; width:150px; cursor:{cursor};">
-        <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["home"]}</div>
-        <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">{m["away"]}</div>
+        <div style="font-size:13px; font-weight:600; color:{home_color}; line-height:1.4;">{m["home"]}</div>
+        <div style="font-size:13px; font-weight:600; color:{away_color}; line-height:1.4;">{m["away"]}</div>
         {score_html}
     </div>'''
 
 
-def build_timeline_html(nwsl_df, wsl_df):
+def build_timeline_html(nwsl_df, wsl_df, team_colors=None):
+    team_colors = team_colors or {}
     nwsl_by_date = _fixtures_to_date_dict(nwsl_df)
     wsl_by_date = _fixtures_to_date_dict(wsl_df)
     all_dates = []
@@ -374,7 +406,7 @@ def build_timeline_html(nwsl_df, wsl_df):
         for d in all_dates:
             matches = by_date.get(d)
             if matches:
-                cards = "".join(_match_card_html(m) for m in matches)
+                cards = "".join(_match_card_html(m, team_colors) for m in matches)
                 cells.append(f'<div style="display:flex; flex-direction:column; gap:6px; width:{COL_W}px; flex-shrink:0;">{cards}</div>')
             else:
                 cells.append(f'<div style="width:{COL_W}px; flex-shrink:0;"></div>')
@@ -658,6 +690,7 @@ def main():
 
     leaders_data = {}
     fixtures_data = {}
+    team_colors = {}
 
     for league in LEAGUES:
         leaders_data[league] = {
@@ -666,6 +699,7 @@ def main():
             "assists": get_leaders(league, "assistsLeaders").head(10),
         }
         fixtures_data[league] = get_fixtures(league)
+        team_colors.update(get_team_colors(league))
 
     # 終了済み試合の詳細(スタメン・得点者/時刻・スタッツ)をまとめて取得
     all_match_details = {}
@@ -704,7 +738,7 @@ def main():
     </div>
 
     <div id="tab-schedule">
-      {build_timeline_html(fixtures_data["NWSL"], fixtures_data["WSL"])}
+      {build_timeline_html(fixtures_data["NWSL"], fixtures_data["WSL"], team_colors)}
     </div>
 
     <div id="tab-nwsl" style="display:none;">
