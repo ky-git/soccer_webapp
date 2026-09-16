@@ -123,25 +123,39 @@ def get_fixtures(league_name: str, days_back: int = 14, days_forward: int = 21) 
     slug = LEAGUES[league_name]
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/{slug}/scoreboard"
     today = datetime.now(timezone.utc)
-    start_date = datetime.fromordinal(today.date().toordinal() - days_back).strftime("%Y%m%d")
-    end_date = datetime.fromordinal(today.date().toordinal() + days_forward).strftime("%Y%m%d")
-    data = _get(url, params={"dates": f"{start_date}-{end_date}"})
+
+    # 注意: ESPNのscoreboardエンドポイントは、ある時点から
+    # "dates=開始日-終了日" という範囲指定を受け付けなくなり、
+    # 常に {"code":400,"message":"Failed to get events endpoint."} を返すことを確認済み
+    # (単日指定 "dates=YYYYMMDD" は成功する)。そのため、日付を1日ずつ
+    # ループしてリクエストし、結果を結合する方式にしている。
+
+    seen_event_ids = set()
     rows = []
-    for ev in data.get("events", []):
-        comp = ev.get("competitions", [{}])[0]
-        competitors = comp.get("competitors", [])
-        home = next((c for c in competitors if c.get("homeAway") == "home"), {})
-        away = next((c for c in competitors if c.get("homeAway") == "away"), {})
-        status = comp.get("status", {}).get("type", {})
-        is_done = status.get("completed", False)
-        rows.append({
-            "event_id": ev.get("id"),
-            "日時(JST)": _to_jst_str(ev.get("date")),
-            "ホーム": home.get("team", {}).get("displayName"),
-            "アウェイ": away.get("team", {}).get("displayName"),
-            "スコア": f"{home.get('score')} - {away.get('score')}" if is_done else "未消化",
-            "状況": status.get("description"),
-        })
+    for offset in range(-days_back, days_forward + 1):
+        target_date = datetime.fromordinal(today.date().toordinal() + offset).strftime("%Y%m%d")
+        data = _get(url, params={"dates": target_date})
+        for ev in data.get("events", []):
+            event_id = ev.get("id")
+            if event_id in seen_event_ids:
+                continue  # 同じ試合が複数日にまたがって返る可能性への念のための重複排除
+            seen_event_ids.add(event_id)
+
+            comp = ev.get("competitions", [{}])[0]
+            competitors = comp.get("competitors", [])
+            home = next((c for c in competitors if c.get("homeAway") == "home"), {})
+            away = next((c for c in competitors if c.get("homeAway") == "away"), {})
+            status = comp.get("status", {}).get("type", {})
+            is_done = status.get("completed", False)
+            rows.append({
+                "event_id": event_id,
+                "日時(JST)": _to_jst_str(ev.get("date")),
+                "ホーム": home.get("team", {}).get("displayName"),
+                "アウェイ": away.get("team", {}).get("displayName"),
+                "スコア": f"{home.get('score')} - {away.get('score')}" if is_done else "未消化",
+                "状況": status.get("description"),
+            })
+
     df = pd.DataFrame(rows)
     if not df.empty:
         df = df.sort_values("日時(JST)").reset_index(drop=True)
