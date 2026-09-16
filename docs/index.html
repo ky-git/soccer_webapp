@@ -8,7 +8,7 @@
 <body style="margin:0; background:#f7f7f5;">
   <div style="font-family:-apple-system,'Hiragino Sans','Yu Gothic',sans-serif; background:#f7f7f5; color:#111; padding:24px; max-width:1100px; margin:0 auto;">
     <h1 style="font-size:20px; font-weight:700; color:#111; margin:0 0 4px;">NWSL / WSL ダッシュボード</h1>
-    <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: 2026-09-16 15:33 JST</p>
+    <p style="font-size:12px; font-weight:600; color:#888; margin:0 0 16px;">最終更新: 2026-09-16 15:41 JST</p>
 
     <div style="display:flex; gap:8px; margin-bottom:16px; border-bottom:2px solid #ddd;">
       <button id="tab-btn-schedule" onclick="showTab('schedule')"
@@ -28,176 +28,178 @@
     <div id="tab-schedule">
       <div style="overflow-x:auto; overflow-y:visible; padding:24px 16px 16px; background:#ffffff; border:1px solid #ddd; border-radius:8px;">
         <div style="position:relative; display:inline-block; min-width:100%;">
+          <div style="position:absolute; left:1014.0px; top:0; bottom:0; width:2px; background:#d33333; z-index:1;"></div>
+        <div style="position:absolute; left:1014.0px; top:-22px; transform:translateX(-50%); font-size:11px; font-weight:700; color:#ffffff; background:#d33333; padding:2px 7px; border-radius:3px; white-space:nowrap; z-index:2;">現在</div>
           <div style="display:flex; gap:8px; margin-left:70px; margin-top:14px;"><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/05</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/06</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/07</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/12</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/13</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/14</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/17</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/19</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/20</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/21</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/26</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/27</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">09/28</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">10/03</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">10/04</div><div style="width:150px; flex-shrink:0; font-size:13px; font-weight:700; color:#111111; background:#e8e8e5; text-align:center; padding:5px 0 7px; border-radius:4px 4px 0 0; border-bottom:2px solid #999;">10/05</div></div>
           <div style="display:flex; align-items:stretch; margin-top:14px; background:#eaf2fb; border-radius:8px; padding:10px 10px 10px 0;">
             <div style="width:70px; flex-shrink:0; display:flex; align-items:flex-start; justify-content:center; padding-top:2px;">
                 <span style="display:inline-block; font-size:13px; font-weight:700; color:#ffffff; background:#2f6fb3; padding:4px 9px; border-radius:4px;">NWSL</span>
             </div>
-            <div style="display:flex; gap:8px;"><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401854080')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+            <div style="display:flex; gap:8px;"><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401854080')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Utah Royals</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Boston Legacy FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 2</div>
-    </div><div onclick="openMatchModal('401853990')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853990')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Bay FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Kansas City Current</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 2</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401853991')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401853991')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Racing Louisville FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Angel City FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 2</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401854081')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401854081')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Denver Summit FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Gotham FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">3 - 0</div>
-    </div><div onclick="openMatchModal('401853992')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853992')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chicago Stars FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">North Carolina Courage</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 6</div>
-    </div><div onclick="openMatchModal('401853993')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853993')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Portland Thorns FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Washington Spirit</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 2</div>
-    </div><div onclick="openMatchModal('401853994')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853994')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Orlando Pride</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Houston Dash</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">3 - 1</div>
-    </div><div onclick="openMatchModal('401853995')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853995')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Seattle Reign FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">San Diego Wave FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 0</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401853996')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401853996')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Racing Louisville FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Gotham FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 2</div>
-    </div><div onclick="openMatchModal('401853997')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853997')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Kansas City Current</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Orlando Pride</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">2 - 2</div>
-    </div><div onclick="openMatchModal('401854082')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401854082')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Angel City FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Denver Summit FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">3 - 3</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401853999')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401853999')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">San Diego Wave FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">North Carolina Courage</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">2 - 1</div>
-    </div><div onclick="openMatchModal('401853998')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401853998')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Seattle Reign FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Bay FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">2 - 0</div>
-    </div><div onclick="openMatchModal('401854000')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401854000')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Houston Dash</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Utah Royals</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 1</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401854083')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401854083')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Washington Spirit</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Boston Legacy FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 3</div>
-    </div><div onclick="openMatchModal('401854001')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401854001')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Portland Thorns FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chicago Stars FC</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 1</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Denver Summit FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Bay FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">10:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Angel City FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Seattle Reign FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">11:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">San Diego Wave FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Kansas City Current</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">11:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Orlando Pride</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Portland Thorns FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">05:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">North Carolina Courage</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Gotham FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">07:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Denver Summit FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Seattle Reign FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">09:45〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Boston Legacy FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Houston Dash</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">03:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chicago Stars FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Washington Spirit</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">06:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Bay FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Racing Louisville FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">08:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Utah Royals</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Angel City FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">08:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Racing Louisville FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">San Diego Wave FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">07:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Gotham FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chicago Stars FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">09:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Seattle Reign FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Boston Legacy FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">09:30〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Kansas City Current</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Denver Summit FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">01:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Washington Spirit</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Angel City FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">07:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Portland Thorns FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Houston Dash</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">09:45〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Bay FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Orlando Pride</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">06:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Utah Royals</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">North Carolina Courage</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">08:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Orlando Pride</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">San Diego Wave FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">09:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Seattle Reign FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">North Carolina Courage</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">11:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Racing Louisville FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Utah Royals</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">05:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Kansas City Current</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Bay FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">07:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Portland Thorns FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Boston Legacy FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">09:45〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Gotham FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Angel City FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">01:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chicago Stars FC</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Denver Summit FC</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">05:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Houston Dash</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Washington Spirit</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">08:00〜</div>
@@ -207,143 +209,143 @@
             <div style="width:70px; flex-shrink:0; display:flex; align-items:flex-start; justify-content:center; padding-top:2px;">
                 <span style="display:inline-block; font-size:13px; font-weight:700; color:#ffffff; background:#b3392f; padding:4px 9px; border-radius:4px;">WSL</span>
             </div>
-            <div style="display:flex; gap:8px;"><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902928')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+            <div style="display:flex; gap:8px;"><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902928')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">London City Lionesses</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester United</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">2 - 1</div>
-    </div><div onclick="openMatchModal('401902927')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902927')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chelsea</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Aston Villa</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 1</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902926')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902926')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Brighton & Hove Albion</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Arsenal</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 1</div>
-    </div><div onclick="openMatchModal('401902925')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902925')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Tottenham Hotspur</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">West Ham United</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">3 - 1</div>
-    </div><div onclick="openMatchModal('401902923')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902923')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Charlton Athletic</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Liverpool</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 4</div>
-    </div><div onclick="openMatchModal('401902924')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902924')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Crystal Palace</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Everton</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 0</div>
-    </div><div onclick="openMatchModal('401902922')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902922')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester City</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Birmingham City</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">3 - 1</div>
-    </div></div><div style="width:150px; flex-shrink:0;"></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902921')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="width:150px; flex-shrink:0;"></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902921')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">West Ham United</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">London City Lionesses</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">2 - 1</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902920')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902920')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester United</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chelsea</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 5</div>
-    </div><div onclick="openMatchModal('401902919')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902919')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Birmingham City</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Brighton & Hove Albion</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">2 - 2</div>
-    </div><div onclick="openMatchModal('401902917')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902917')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Everton</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Charlton Athletic</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 0</div>
-    </div><div onclick="openMatchModal('401902918')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902918')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Liverpool</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Tottenham Hotspur</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 1</div>
-    </div><div onclick="openMatchModal('401902916')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div><div onclick="openMatchModal('401902916')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Arsenal</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Crystal Palace</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">0 - 0</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902915')" style="border:1px solid #999999; border-right:4px solid #d33333; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:pointer;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div onclick="openMatchModal('401902915')" style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#eef0f2; width:150px; cursor:pointer;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Aston Villa</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester City</div>
         <div style="font-size:14px; font-weight:700; color:#111111; margin-top:4px;">1 - 4</div>
-    </div></div><div style="width:150px; flex-shrink:0;"></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="width:150px; flex-shrink:0;"></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester City</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Liverpool</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">03:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Charlton Athletic</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">London City Lionesses</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">20:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chelsea</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Birmingham City</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">20:45〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Arsenal</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester United</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">01:30〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Brighton & Hove Albion</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Aston Villa</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Crystal Palace</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Tottenham Hotspur</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">West Ham United</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Everton</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div></div><div style="width:150px; flex-shrink:0;"></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="width:150px; flex-shrink:0;"></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Charlton Athletic</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester City</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">21:30〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">London City Lionesses</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Brighton & Hove Albion</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">01:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester United</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">West Ham United</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">21:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Liverpool</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Everton</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Tottenham Hotspur</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Aston Villa</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Birmingham City</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Crystal Palace</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chelsea</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Arsenal</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">00:30〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester United</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Liverpool</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">21:30〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">West Ham United</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Chelsea</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Aston Villa</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Crystal Palace</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Brighton & Hove Albion</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Charlton Athletic</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Everton</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Birmingham City</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Tottenham Hotspur</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">London City Lionesses</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">22:00〜</div>
-    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="border:1px solid #cccccc;  border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
+    </div></div><div style="display:flex; flex-direction:column; gap:6px; width:150px; flex-shrink:0;"><div style="box-sizing:border-box; border:1px solid #cccccc; border-radius:6px; padding:7px 9px; background:#ffffff; width:150px; cursor:default;">
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Manchester City</div>
         <div style="font-size:13px; font-weight:600; color:#222222; line-height:1.4;">Arsenal</div>
         <div style="font-size:12px; font-weight:600; color:#666666; margin-top:4px;">00:30〜</div>
