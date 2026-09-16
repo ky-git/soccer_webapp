@@ -18,6 +18,12 @@ import sys
 import time
 from pathlib import Path
 
+try:
+    import curl_cffi
+    print(f"curl_cffi version: {curl_cffi.__version__}")
+except Exception:
+    pass
+
 JST = ZoneInfo("Asia/Tokyo")
 LEAGUES = {"NWSL": "usa.nwsl", "WSL": "eng.w.1"}
 TIMEOUT = 15
@@ -40,18 +46,30 @@ STAT_NAME_CANDIDATES = {
 }
 
 
+# curl_cffiはバージョンにより対応ブラウザプロファイルが変わることがあるため、
+# 1つに固定せず、複数を順に試して最初に成功したものを使う
+IMPERSONATE_CANDIDATES = ["chrome124", "chrome123", "chrome120", "chrome110", "chrome"]
+
+
 def _get(url, params=None, max_retries=3, backoff_seconds=5):
     last_error = None
     for attempt in range(1, max_retries + 1):
-        try:
-            resp = cffi_requests.get(url, params=params, impersonate="chrome124", timeout=TIMEOUT)
-            resp.raise_for_status()
-            return resp.json()
-        except Exception as e:
-            last_error = e
-            print(f"  [警告] リクエスト失敗 (試行 {attempt}/{max_retries}): {url}\n    詳細: {e}")
-            if attempt < max_retries:
-                time.sleep(backoff_seconds * attempt)  # 5秒, 10秒, ... と間隔を広げる
+        for impersonate in IMPERSONATE_CANDIDATES:
+            try:
+                resp = cffi_requests.get(url, params=params, impersonate=impersonate, timeout=TIMEOUT)
+                resp.raise_for_status()
+                return resp.json()
+            except Exception as e:
+                last_error = e
+                body_preview = ""
+                try:
+                    body_preview = resp.text[:200]
+                except Exception:
+                    pass
+                print(f"  [警告] リクエスト失敗 (試行 {attempt}/{max_retries}, impersonate={impersonate}): {url}\n"
+                      f"    詳細: {e}\n    本文: {body_preview}")
+        if attempt < max_retries:
+            time.sleep(backoff_seconds * attempt)  # 5秒, 10秒, ... と間隔を広げる
     # 全リトライ失敗時は例外を投げ、呼び出し元(main)で捕捉させる
     raise last_error
 
