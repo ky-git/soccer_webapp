@@ -1,23 +1,7 @@
 {
-  "last_full_update": "2026-09-19T07:36:20.295579+09:00",
+  "last_full_update": "2026-09-19T14:55:47.617738+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854080",
-        "日時(JST)": "2026-09-05 10:30 JST",
-        "ホーム": "Utah Royals",
-        "アウェイ": "Boston Legacy FC",
-        "スコア": "1 - 2",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401853990",
-        "日時(JST)": "2026-09-05 11:00 JST",
-        "ホーム": "Bay FC",
-        "アウェイ": "Kansas City Current",
-        "スコア": "1 - 2",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401853991",
         "日時(JST)": "2026-09-06 07:30 JST",
@@ -151,8 +135,8 @@
         "日時(JST)": "2026-09-19 11:00 JST",
         "ホーム": "San Diego Wave FC",
         "アウェイ": "Kansas City Current",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "2 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854004",
@@ -340,14 +324,6 @@
       }
     ],
     "WSL": [
-      {
-        "event_id": "401902928",
-        "日時(JST)": "2026-09-05 03:00 JST",
-        "ホーム": "London City Lionesses",
-        "アウェイ": "Manchester United",
-        "スコア": "2 - 1",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401902927",
         "日時(JST)": "2026-09-05 20:35 JST",
