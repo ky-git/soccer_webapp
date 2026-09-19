@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-20T05:43:42.798687+09:00",
+  "last_full_update": "2026-09-20T08:09:09.322236+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -143,8 +143,8 @@
         "日時(JST)": "2026-09-20 05:00 JST",
         "ホーム": "Orlando Pride",
         "アウェイ": "Portland Thorns FC",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "1 - 4",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854005",
@@ -152,7 +152,7 @@
         "ホーム": "North Carolina Courage",
         "アウェイ": "Gotham FC",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "First Half"
       },
       {
         "event_id": "401854085",
