@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-19T23:27:21.359950+09:00",
+  "last_full_update": "2026-09-20T05:43:42.798687+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -144,7 +144,7 @@
         "ホーム": "Orlando Pride",
         "アウェイ": "Portland Thorns FC",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "First Half"
       },
       {
         "event_id": "401854005",
@@ -457,8 +457,8 @@
         "日時(JST)": "2026-09-20 01:30 JST",
         "ホーム": "Arsenal",
         "アウェイ": "Manchester United",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902910",
