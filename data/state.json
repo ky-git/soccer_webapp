@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-19T14:55:47.617738+09:00",
+  "last_full_update": "2026-09-19T23:27:21.359950+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -441,16 +441,16 @@
         "日時(JST)": "2026-09-19 20:30 JST",
         "ホーム": "Charlton Athletic",
         "アウェイ": "London City Lionesses",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 4",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902912",
         "日時(JST)": "2026-09-19 20:45 JST",
         "ホーム": "Chelsea",
         "アウェイ": "Birmingham City",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "2 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902911",
