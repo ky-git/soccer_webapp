@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-21T01:49:40.979288+09:00",
+  "last_full_update": "2026-09-21T07:28:13.352974+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -159,8 +159,8 @@
         "日時(JST)": "2026-09-21 03:00 JST",
         "ホーム": "Boston Legacy FC",
         "アウェイ": "Houston Dash",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854006",
@@ -168,7 +168,7 @@
         "ホーム": "Chicago Stars FC",
         "アウェイ": "Washington Spirit",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Second Half"
       },
       {
         "event_id": "401854007",
