@@ -1,15 +1,7 @@
 {
-  "last_full_update": "2026-09-20T08:09:09.322236+09:00",
+  "last_full_update": "2026-09-20T10:11:58.516730+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401853991",
-        "日時(JST)": "2026-09-06 07:30 JST",
-        "ホーム": "Racing Louisville FC",
-        "アウェイ": "Angel City FC",
-        "スコア": "0 - 2",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854081",
         "日時(JST)": "2026-09-07 03:00 JST",
@@ -151,8 +143,8 @@
         "日時(JST)": "2026-09-20 07:30 JST",
         "ホーム": "North Carolina Courage",
         "アウェイ": "Gotham FC",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "1 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854085",
@@ -160,7 +152,7 @@
         "ホーム": "Denver Summit FC",
         "アウェイ": "Seattle Reign FC",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Delayed"
       },
       {
         "event_id": "401854086",
@@ -325,14 +317,6 @@
     ],
     "WSL": [
       {
-        "event_id": "401902927",
-        "日時(JST)": "2026-09-05 20:35 JST",
-        "ホーム": "Chelsea",
-        "アウェイ": "Aston Villa",
-        "スコア": "1 - 1",
-        "状況": "Full Time"
-      },
-      {
         "event_id": "401902926",
         "日時(JST)": "2026-09-06 20:00 JST",
         "ホーム": "Brighton & Hove Albion",
@@ -389,11 +373,11 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401902919",
+        "event_id": "401902918",
         "日時(JST)": "2026-09-13 22:00 JST",
-        "ホーム": "Birmingham City",
-        "アウェイ": "Brighton & Hove Albion",
-        "スコア": "2 - 2",
+        "ホーム": "Liverpool",
+        "アウェイ": "Tottenham Hotspur",
+        "スコア": "1 - 1",
         "状況": "Full Time"
       },
       {
@@ -405,11 +389,11 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401902918",
+        "event_id": "401902919",
         "日時(JST)": "2026-09-13 22:00 JST",
-        "ホーム": "Liverpool",
-        "アウェイ": "Tottenham Hotspur",
-        "スコア": "1 - 1",
+        "ホーム": "Birmingham City",
+        "アウェイ": "Brighton & Hove Albion",
+        "スコア": "2 - 2",
         "状況": "Full Time"
       },
       {
@@ -461,6 +445,14 @@
         "状況": "Full Time"
       },
       {
+        "event_id": "401902908",
+        "日時(JST)": "2026-09-20 22:00 JST",
+        "ホーム": "West Ham United",
+        "アウェイ": "Everton",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
         "event_id": "401902910",
         "日時(JST)": "2026-09-20 22:00 JST",
         "ホーム": "Brighton & Hove Albion",
@@ -473,14 +465,6 @@
         "日時(JST)": "2026-09-20 22:00 JST",
         "ホーム": "Crystal Palace",
         "アウェイ": "Tottenham Hotspur",
-        "スコア": "未消化",
-        "状況": "Scheduled"
-      },
-      {
-        "event_id": "401902908",
-        "日時(JST)": "2026-09-20 22:00 JST",
-        "ホーム": "West Ham United",
-        "アウェイ": "Everton",
         "スコア": "未消化",
         "状況": "Scheduled"
       },
@@ -509,6 +493,14 @@
         "状況": "Scheduled"
       },
       {
+        "event_id": "401902903",
+        "日時(JST)": "2026-09-27 22:00 JST",
+        "ホーム": "Birmingham City",
+        "アウェイ": "Crystal Palace",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
         "event_id": "401902904",
         "日時(JST)": "2026-09-27 22:00 JST",
         "ホーム": "Liverpool",
@@ -521,14 +513,6 @@
         "日時(JST)": "2026-09-27 22:00 JST",
         "ホーム": "Tottenham Hotspur",
         "アウェイ": "Aston Villa",
-        "スコア": "未消化",
-        "状況": "Scheduled"
-      },
-      {
-        "event_id": "401902903",
-        "日時(JST)": "2026-09-27 22:00 JST",
-        "ホーム": "Birmingham City",
-        "アウェイ": "Crystal Palace",
         "スコア": "未消化",
         "状況": "Scheduled"
       },
