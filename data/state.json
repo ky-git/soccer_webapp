@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-26T16:45:18.757372+09:00",
+  "last_full_update": "2026-09-27T02:12:25.458025+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -152,7 +152,7 @@
         "ホーム": "Kansas City Current",
         "アウェイ": "Denver Summit FC",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "First Half"
       },
       {
         "event_id": "401854011",
@@ -409,8 +409,8 @@
         "日時(JST)": "2026-09-26 21:30 JST",
         "ホーム": "Charlton Athletic",
         "アウェイ": "Manchester City",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "0 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902906",
@@ -418,7 +418,7 @@
         "ホーム": "London City Lionesses",
         "アウェイ": "Brighton & Hove Albion",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Second Half"
       },
       {
         "event_id": "401902905",
