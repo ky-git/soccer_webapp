@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-26T10:36:13.367218+09:00",
+  "last_full_update": "2026-09-26T16:45:18.757372+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -135,16 +135,16 @@
         "日時(JST)": "2026-09-26 09:00 JST",
         "ホーム": "Gotham FC",
         "アウェイ": "Chicago Stars FC",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "3 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854087",
         "日時(JST)": "2026-09-26 09:30 JST",
         "ホーム": "Seattle Reign FC",
         "アウェイ": "Boston Legacy FC",
-        "スコア": "未消化",
-        "状況": "Halftime"
+        "スコア": "2 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854088",
