@@ -1,31 +1,7 @@
 {
-  "last_full_update": "2026-09-27T04:54:02.347310+09:00",
+  "last_full_update": "2026-09-27T10:29:43.655637+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401853999",
-        "日時(JST)": "2026-09-13 07:30 JST",
-        "ホーム": "San Diego Wave FC",
-        "アウェイ": "North Carolina Courage",
-        "スコア": "2 - 1",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401853998",
-        "日時(JST)": "2026-09-13 09:00 JST",
-        "ホーム": "Seattle Reign FC",
-        "アウェイ": "Bay FC",
-        "スコア": "2 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854000",
-        "日時(JST)": "2026-09-13 09:45 JST",
-        "ホーム": "Houston Dash",
-        "アウェイ": "Utah Royals",
-        "スコア": "0 - 1",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854083",
         "日時(JST)": "2026-09-14 02:00 JST",
@@ -159,8 +135,8 @@
         "日時(JST)": "2026-09-27 07:30 JST",
         "ホーム": "Washington Spirit",
         "アウェイ": "Angel City FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "0 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854012",
@@ -168,7 +144,7 @@
         "ホーム": "Portland Thorns FC",
         "アウェイ": "Houston Dash",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "First Half"
       },
       {
         "event_id": "401854013",
@@ -289,17 +265,33 @@
         "アウェイ": "Angel City FC",
         "スコア": "未消化",
         "状況": "Scheduled"
+      },
+      {
+        "event_id": "401854024",
+        "日時(JST)": "2026-10-19 02:00 JST",
+        "ホーム": "Houston Dash",
+        "アウェイ": "Orlando Pride",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401854025",
+        "日時(JST)": "2026-10-19 06:00 JST",
+        "ホーム": "Bay FC",
+        "アウェイ": "Portland Thorns FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401854026",
+        "日時(JST)": "2026-10-19 08:00 JST",
+        "ホーム": "Chicago Stars FC",
+        "アウェイ": "Seattle Reign FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
       }
     ],
     "WSL": [
-      {
-        "event_id": "401902921",
-        "日時(JST)": "2026-09-12 20:45 JST",
-        "ホーム": "West Ham United",
-        "アウェイ": "London City Lionesses",
-        "スコア": "2 - 1",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401902920",
         "日時(JST)": "2026-09-13 20:00 JST",
@@ -429,6 +421,14 @@
         "状況": "Scheduled"
       },
       {
+        "event_id": "401902902",
+        "日時(JST)": "2026-09-27 22:00 JST",
+        "ホーム": "Tottenham Hotspur",
+        "アウェイ": "Aston Villa",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
         "event_id": "401902903",
         "日時(JST)": "2026-09-27 22:00 JST",
         "ホーム": "Birmingham City",
@@ -441,14 +441,6 @@
         "日時(JST)": "2026-09-27 22:00 JST",
         "ホーム": "Liverpool",
         "アウェイ": "Everton",
-        "スコア": "未消化",
-        "状況": "Scheduled"
-      },
-      {
-        "event_id": "401902902",
-        "日時(JST)": "2026-09-27 22:00 JST",
-        "ホーム": "Tottenham Hotspur",
-        "アウェイ": "Aston Villa",
         "スコア": "未消化",
         "状況": "Scheduled"
       },
@@ -521,6 +513,54 @@
         "日時(JST)": "2026-10-17 20:45 JST",
         "ホーム": "Arsenal",
         "アウェイ": "Birmingham City",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902890",
+        "日時(JST)": "2026-10-18 20:00 JST",
+        "ホーム": "Chelsea",
+        "アウェイ": "Tottenham Hotspur",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902889",
+        "日時(JST)": "2026-10-18 20:00 JST",
+        "ホーム": "Crystal Palace",
+        "アウェイ": "West Ham United",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902888",
+        "日時(JST)": "2026-10-18 22:00 JST",
+        "ホーム": "London City Lionesses",
+        "アウェイ": "Everton",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902893",
+        "日時(JST)": "2026-10-18 22:00 JST",
+        "ホーム": "Aston Villa",
+        "アウェイ": "Liverpool",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902891",
+        "日時(JST)": "2026-10-18 22:00 JST",
+        "ホーム": "Charlton Athletic",
+        "アウェイ": "Manchester United",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902887",
+        "日時(JST)": "2026-10-18 22:30 JST",
+        "ホーム": "Manchester City",
+        "アウェイ": "Brighton & Hove Albion",
         "スコア": "未消化",
         "状況": "Scheduled"
       }
