@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-09-27T17:13:50.579627+09:00",
+  "last_full_update": "2026-09-27T23:02:16.779277+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -417,8 +417,8 @@
         "日時(JST)": "2026-09-27 21:00 JST",
         "ホーム": "Manchester United",
         "アウェイ": "West Ham United",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "2 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902902",
@@ -426,7 +426,7 @@
         "ホーム": "Tottenham Hotspur",
         "アウェイ": "Aston Villa",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Second Half"
       },
       {
         "event_id": "401902903",
@@ -434,7 +434,7 @@
         "ホーム": "Birmingham City",
         "アウェイ": "Crystal Palace",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Halftime"
       },
       {
         "event_id": "401902904",
@@ -442,7 +442,7 @@
         "ホーム": "Liverpool",
         "アウェイ": "Everton",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Halftime"
       },
       {
         "event_id": "401902901",
