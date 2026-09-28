@@ -1,23 +1,7 @@
 {
-  "last_full_update": "2026-09-28T03:26:51.598133+09:00",
+  "last_full_update": "2026-09-28T09:50:53.909809+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854083",
-        "日時(JST)": "2026-09-14 02:00 JST",
-        "ホーム": "Washington Spirit",
-        "アウェイ": "Boston Legacy FC",
-        "スコア": "0 - 3",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854001",
-        "日時(JST)": "2026-09-14 08:00 JST",
-        "ホーム": "Portland Thorns FC",
-        "アウェイ": "Chicago Stars FC",
-        "スコア": "1 - 1",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854084",
         "日時(JST)": "2026-09-17 10:30 JST",
@@ -151,8 +135,8 @@
         "日時(JST)": "2026-09-28 06:00 JST",
         "ホーム": "Bay FC",
         "アウェイ": "Orlando Pride",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 3",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854014",
@@ -160,7 +144,7 @@
         "ホーム": "Utah Royals",
         "アウェイ": "North Carolina Courage",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Second Half"
       },
       {
         "event_id": "401854015",
@@ -293,54 +277,6 @@
     ],
     "WSL": [
       {
-        "event_id": "401902920",
-        "日時(JST)": "2026-09-13 20:00 JST",
-        "ホーム": "Manchester United",
-        "アウェイ": "Chelsea",
-        "スコア": "0 - 5",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902919",
-        "日時(JST)": "2026-09-13 22:00 JST",
-        "ホーム": "Birmingham City",
-        "アウェイ": "Brighton & Hove Albion",
-        "スコア": "2 - 2",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902917",
-        "日時(JST)": "2026-09-13 22:00 JST",
-        "ホーム": "Everton",
-        "アウェイ": "Charlton Athletic",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902918",
-        "日時(JST)": "2026-09-13 22:00 JST",
-        "ホーム": "Liverpool",
-        "アウェイ": "Tottenham Hotspur",
-        "スコア": "1 - 1",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902916",
-        "日時(JST)": "2026-09-13 22:45 JST",
-        "ホーム": "Arsenal",
-        "アウェイ": "Crystal Palace",
-        "スコア": "0 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902915",
-        "日時(JST)": "2026-09-14 02:30 JST",
-        "ホーム": "Aston Villa",
-        "アウェイ": "Manchester City",
-        "スコア": "1 - 4",
-        "状況": "Full Time"
-      },
-      {
         "event_id": "401902914",
         "日時(JST)": "2026-09-19 03:00 JST",
         "ホーム": "Manchester City",
@@ -421,14 +357,6 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401902902",
-        "日時(JST)": "2026-09-27 22:00 JST",
-        "ホーム": "Tottenham Hotspur",
-        "アウェイ": "Aston Villa",
-        "スコア": "4 - 0",
-        "状況": "Full Time"
-      },
-      {
         "event_id": "401902903",
         "日時(JST)": "2026-09-27 22:00 JST",
         "ホーム": "Birmingham City",
@@ -442,6 +370,14 @@
         "ホーム": "Liverpool",
         "アウェイ": "Everton",
         "スコア": "2 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401902902",
+        "日時(JST)": "2026-09-27 22:00 JST",
+        "ホーム": "Tottenham Hotspur",
+        "アウェイ": "Aston Villa",
+        "スコア": "4 - 0",
         "状況": "Full Time"
       },
       {
@@ -533,14 +469,6 @@
         "状況": "Scheduled"
       },
       {
-        "event_id": "401902888",
-        "日時(JST)": "2026-10-18 22:00 JST",
-        "ホーム": "London City Lionesses",
-        "アウェイ": "Everton",
-        "スコア": "未消化",
-        "状況": "Scheduled"
-      },
-      {
         "event_id": "401902893",
         "日時(JST)": "2026-10-18 22:00 JST",
         "ホーム": "Aston Villa",
@@ -553,6 +481,14 @@
         "日時(JST)": "2026-10-18 22:00 JST",
         "ホーム": "Charlton Athletic",
         "アウェイ": "Manchester United",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902888",
+        "日時(JST)": "2026-10-18 22:00 JST",
+        "ホーム": "London City Lionesses",
+        "アウェイ": "Everton",
         "スコア": "未消化",
         "状況": "Scheduled"
       },
