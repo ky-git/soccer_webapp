@@ -1,23 +1,7 @@
 {
-  "last_full_update": "2026-09-30T15:45:46.920312+09:00",
+  "last_full_update": "2026-10-01T14:59:22.616200+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854084",
-        "日時(JST)": "2026-09-17 10:30 JST",
-        "ホーム": "Denver Summit FC",
-        "アウェイ": "Bay FC",
-        "スコア": "2 - 2",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854002",
-        "日時(JST)": "2026-09-17 11:00 JST",
-        "ホーム": "Angel City FC",
-        "アウェイ": "Seattle Reign FC",
-        "スコア": "3 - 1",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854003",
         "日時(JST)": "2026-09-19 11:00 JST",
