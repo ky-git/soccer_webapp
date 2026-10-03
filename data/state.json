@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-03T11:00:47.165219+09:00",
+  "last_full_update": "2026-10-03T17:09:24.020326+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -127,16 +127,16 @@
         "日時(JST)": "2026-10-03 09:00 JST",
         "ホーム": "Orlando Pride",
         "アウェイ": "San Diego Wave FC",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "1 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854016",
         "日時(JST)": "2026-10-03 11:00 JST",
         "ホーム": "Seattle Reign FC",
         "アウェイ": "North Carolina Courage",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "0 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854017",
