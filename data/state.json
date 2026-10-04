@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-05T02:36:59.279466+09:00",
+  "last_full_update": "2026-10-05T06:30:05.859280+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -143,8 +143,8 @@
         "日時(JST)": "2026-10-05 02:00 JST",
         "ホーム": "Gotham FC",
         "アウェイ": "Angel City FC",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "1 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854090",
@@ -152,7 +152,7 @@
         "ホーム": "Chicago Stars FC",
         "アウェイ": "Denver Summit FC",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Second Half"
       },
       {
         "event_id": "401854020",
