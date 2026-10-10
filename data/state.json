@@ -1,31 +1,7 @@
 {
-  "last_full_update": "2026-10-09T18:08:33.460232+09:00",
+  "last_full_update": "2026-10-10T16:11:07.201757+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854009",
-        "日時(JST)": "2026-09-26 07:30 JST",
-        "ホーム": "Racing Louisville FC",
-        "アウェイ": "San Diego Wave FC",
-        "スコア": "0 - 2",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854010",
-        "日時(JST)": "2026-09-26 09:00 JST",
-        "ホーム": "Gotham FC",
-        "アウェイ": "Chicago Stars FC",
-        "スコア": "3 - 1",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854087",
-        "日時(JST)": "2026-09-26 09:30 JST",
-        "ホーム": "Seattle Reign FC",
-        "アウェイ": "Boston Legacy FC",
-        "スコア": "2 - 0",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854088",
         "日時(JST)": "2026-09-27 01:30 JST",
@@ -481,6 +457,14 @@
         "日時(JST)": "2026-10-26 03:00 JST",
         "ホーム": "Manchester United",
         "アウェイ": "Manchester City",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902879",
+        "日時(JST)": "2026-10-31 21:45 JST",
+        "ホーム": "Everton",
+        "アウェイ": "Manchester United",
         "スコア": "未消化",
         "状況": "Scheduled"
       }
