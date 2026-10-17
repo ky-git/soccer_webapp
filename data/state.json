@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-17T13:30:49.908812+09:00",
+  "last_full_update": "2026-10-17T22:45:02.551125+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -305,8 +305,8 @@
         "日時(JST)": "2026-10-17 20:45 JST",
         "ホーム": "Arsenal",
         "アウェイ": "Birmingham City",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902890",
