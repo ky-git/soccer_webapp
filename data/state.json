@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-17T22:45:02.551125+09:00",
+  "last_full_update": "2026-10-18T04:26:56.560961+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -63,8 +63,8 @@
         "日時(JST)": "2026-10-18 01:30 JST",
         "ホーム": "Washington Spirit",
         "アウェイ": "Gotham FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854022",
