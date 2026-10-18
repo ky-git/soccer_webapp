@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-18T10:05:23.489727+09:00",
+  "last_full_update": "2026-10-18T14:56:33.386346+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -63,8 +63,8 @@
         "日時(JST)": "2026-10-18 09:45 JST",
         "ホーム": "Denver Summit FC",
         "アウェイ": "Angel City FC",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "2 - 3",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854024",
