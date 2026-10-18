@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-19T03:08:21.044691+09:00",
+  "last_full_update": "2026-10-19T05:47:21.020479+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -71,8 +71,8 @@
         "日時(JST)": "2026-10-19 02:00 JST",
         "ホーム": "Houston Dash",
         "アウェイ": "Orlando Pride",
-        "スコア": "未消化",
-        "状況": "Halftime"
+        "スコア": "1 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854025",
