@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-18T23:36:39.940698+09:00",
+  "last_full_update": "2026-10-19T03:08:21.044691+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -72,7 +72,7 @@
         "ホーム": "Houston Dash",
         "アウェイ": "Orlando Pride",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Halftime"
       },
       {
         "event_id": "401854025",
@@ -297,32 +297,32 @@
         "日時(JST)": "2026-10-18 22:00 JST",
         "ホーム": "Aston Villa",
         "アウェイ": "Liverpool",
-        "スコア": "未消化",
-        "状況": "In Progress"
+        "スコア": "2 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902891",
         "日時(JST)": "2026-10-18 22:00 JST",
         "ホーム": "Charlton Athletic",
         "アウェイ": "Manchester United",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "1 - 3",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902888",
         "日時(JST)": "2026-10-18 22:00 JST",
         "ホーム": "London City Lionesses",
         "アウェイ": "Everton",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "2 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902887",
         "日時(JST)": "2026-10-18 22:30 JST",
         "ホーム": "Manchester City",
         "アウェイ": "Brighton & Hove Albion",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "3 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902880",
