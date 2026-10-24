@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-25T01:36:51.259082+09:00",
+  "last_full_update": "2026-10-25T04:30:11.741260+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -265,8 +265,8 @@
         "日時(JST)": "2026-10-25 01:15 JST",
         "ホーム": "Brighton & Hove Albion",
         "アウェイ": "West Ham United",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "3 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902883",
