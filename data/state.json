@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-24T16:20:03.566008+09:00",
+  "last_full_update": "2026-10-25T01:36:51.259082+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -257,8 +257,8 @@
         "日時(JST)": "2026-10-24 20:45 JST",
         "ホーム": "Tottenham Hotspur",
         "アウェイ": "Arsenal",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902884",
@@ -266,7 +266,7 @@
         "ホーム": "Brighton & Hove Albion",
         "アウェイ": "West Ham United",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "First Half"
       },
       {
         "event_id": "401902883",
