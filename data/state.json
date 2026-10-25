@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-26T01:25:28.125690+09:00",
+  "last_full_update": "2026-10-26T07:35:27.131433+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -111,8 +111,8 @@
         "日時(JST)": "2026-10-26 04:00 JST",
         "ホーム": "Orlando Pride",
         "アウェイ": "Gotham FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854032",
@@ -120,7 +120,7 @@
         "ホーム": "Kansas City Current",
         "アウェイ": "Washington Spirit",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Second Half"
       },
       {
         "event_id": "401854094",
@@ -305,8 +305,8 @@
         "日時(JST)": "2026-10-26 03:00 JST",
         "ホーム": "Manchester United",
         "アウェイ": "Manchester City",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902879",
