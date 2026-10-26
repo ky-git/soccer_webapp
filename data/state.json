@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-10-26T07:35:27.131433+09:00",
+  "last_full_update": "2026-10-26T10:13:38.380920+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -119,16 +119,16 @@
         "日時(JST)": "2026-10-26 06:00 JST",
         "ホーム": "Kansas City Current",
         "アウェイ": "Washington Spirit",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "2 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854094",
         "日時(JST)": "2026-10-26 08:00 JST",
         "ホーム": "San Diego Wave FC",
         "アウェイ": "Boston Legacy FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "2 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401854095",
