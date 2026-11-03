@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-02T15:10:40.669035+09:00",
+  "last_full_update": "2026-11-03T15:51:47.614368+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -67,11 +67,35 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401854095",
+        "event_id": "401854035",
         "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Angel City FC",
-        "アウェイ": "Boston Legacy FC",
-        "スコア": "4 - 1",
+        "ホーム": "Washington Spirit",
+        "アウェイ": "Chicago Stars FC",
+        "スコア": "2 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401854037",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "Orlando Pride",
+        "スコア": "1 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401854036",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Racing Louisville FC",
+        "アウェイ": "Kansas City Current",
+        "スコア": "0 - 2",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401854096",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "North Carolina Courage",
+        "アウェイ": "Denver Summit FC",
+        "スコア": "1 - 0",
         "状況": "Full Time"
       },
       {
@@ -91,6 +115,14 @@
         "状況": "Full Time"
       },
       {
+        "event_id": "401854095",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Angel City FC",
+        "アウェイ": "Boston Legacy FC",
+        "スコア": "4 - 1",
+        "状況": "Full Time"
+      },
+      {
         "event_id": "401854038",
         "日時(JST)": "2026-11-02 07:00 JST",
         "ホーム": "Houston Dash",
@@ -99,36 +131,36 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401854096",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "North Carolina Courage",
-        "アウェイ": "Denver Summit FC",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
+        "event_id": "401932959",
+        "日時(JST)": "2026-11-07 12:00 JST",
+        "ホーム": "San Diego Wave FC",
+        "アウェイ": "Utah Royals",
+        "スコア": "未消化",
+        "状況": "Scheduled"
       },
       {
-        "event_id": "401854036",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Racing Louisville FC",
-        "アウェイ": "Kansas City Current",
-        "スコア": "0 - 2",
-        "状況": "Full Time"
+        "event_id": "401932976",
+        "日時(JST)": "2026-11-08 02:00 JST",
+        "ホーム": "Kansas City Current",
+        "アウェイ": "Angel City FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
       },
       {
-        "event_id": "401854037",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Seattle Reign FC",
-        "アウェイ": "Orlando Pride",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
+        "event_id": "401932958",
+        "日時(JST)": "2026-11-09 02:30 JST",
+        "ホーム": "Gotham FC",
+        "アウェイ": "Seattle Reign FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
       },
       {
-        "event_id": "401854035",
-        "日時(JST)": "2026-11-02 07:00 JST",
+        "event_id": "401932957",
+        "日時(JST)": "2026-11-09 05:00 JST",
         "ホーム": "Washington Spirit",
-        "アウェイ": "Chicago Stars FC",
-        "スコア": "2 - 0",
-        "状況": "Full Time"
+        "アウェイ": "Portland Thorns FC",
+        "スコア": "未消化",
+        "状況": "Scheduled"
       }
     ],
     "WSL": [
