@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-08T01:30:33.058985+09:00",
+  "last_full_update": "2026-11-08T05:54:59.308120+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -119,8 +119,8 @@
         "日時(JST)": "2026-11-08 02:00 JST",
         "ホーム": "Kansas City Current",
         "アウェイ": "Angel City FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 0",
+        "状況": "Final Score - After Extra Time"
       },
       {
         "event_id": "401932958",
