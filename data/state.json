@@ -1,31 +1,7 @@
 {
-  "last_full_update": "2026-11-07T02:59:47.157590+09:00",
+  "last_full_update": "2026-11-07T19:15:38.606115+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854027",
-        "日時(JST)": "2026-10-24 09:00 JST",
-        "ホーム": "Chicago Stars FC",
-        "アウェイ": "Houston Dash",
-        "スコア": "1 - 3",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854028",
-        "日時(JST)": "2026-10-24 10:30 JST",
-        "ホーム": "Utah Royals",
-        "アウェイ": "Seattle Reign FC",
-        "スコア": "0 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854029",
-        "日時(JST)": "2026-10-24 11:00 JST",
-        "ホーム": "Portland Thorns FC",
-        "アウェイ": "North Carolina Courage",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854093",
         "日時(JST)": "2026-10-25 07:30 JST",
@@ -99,11 +75,11 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401854033",
+        "event_id": "401854038",
         "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Bay FC",
-        "アウェイ": "San Diego Wave FC",
-        "スコア": "0 - 1",
+        "ホーム": "Houston Dash",
+        "アウェイ": "Portland Thorns FC",
+        "スコア": "0 - 2",
         "状況": "Full Time"
       },
       {
@@ -115,6 +91,14 @@
         "状況": "Full Time"
       },
       {
+        "event_id": "401854033",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Bay FC",
+        "アウェイ": "San Diego Wave FC",
+        "スコア": "0 - 1",
+        "状況": "Full Time"
+      },
+      {
         "event_id": "401854095",
         "日時(JST)": "2026-11-02 07:00 JST",
         "ホーム": "Angel City FC",
@@ -123,20 +107,12 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401854038",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Houston Dash",
-        "アウェイ": "Portland Thorns FC",
-        "スコア": "0 - 2",
-        "状況": "Full Time"
-      },
-      {
         "event_id": "401932959",
         "日時(JST)": "2026-11-07 12:00 JST",
         "ホーム": "San Diego Wave FC",
         "アウェイ": "Utah Royals",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "0 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401932976",
