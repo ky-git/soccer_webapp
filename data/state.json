@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-09T04:45:06.751349+09:00",
+  "last_full_update": "2026-11-09T08:45:34.338637+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -119,8 +119,8 @@
         "日時(JST)": "2026-11-09 05:00 JST",
         "ホーム": "Washington Spirit",
         "アウェイ": "Portland Thorns FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "4 - 1",
+        "状況": "Full Time"
       }
     ],
     "WSL": [
