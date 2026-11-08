@@ -1,23 +1,7 @@
 {
-  "last_full_update": "2026-11-08T05:54:59.308120+09:00",
+  "last_full_update": "2026-11-08T09:39:32.786237+09:00",
   "fixtures_snapshot": {
     "NWSL": [
-      {
-        "event_id": "401854093",
-        "日時(JST)": "2026-10-25 07:30 JST",
-        "ホーム": "Denver Summit FC",
-        "アウェイ": "Racing Louisville FC",
-        "スコア": "6 - 1",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854030",
-        "日時(JST)": "2026-10-25 09:45 JST",
-        "ホーム": "Angel City FC",
-        "アウェイ": "Bay FC",
-        "スコア": "2 - 0",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401854031",
         "日時(JST)": "2026-10-26 04:00 JST",
@@ -43,26 +27,34 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401854035",
+        "event_id": "401854095",
         "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Washington Spirit",
-        "アウェイ": "Chicago Stars FC",
+        "ホーム": "Angel City FC",
+        "アウェイ": "Boston Legacy FC",
+        "スコア": "4 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401854033",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Bay FC",
+        "アウェイ": "San Diego Wave FC",
+        "スコア": "0 - 1",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401854034",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Gotham FC",
+        "アウェイ": "Utah Royals",
         "スコア": "2 - 0",
         "状況": "Full Time"
       },
       {
-        "event_id": "401854037",
+        "event_id": "401854038",
         "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Seattle Reign FC",
-        "アウェイ": "Orlando Pride",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854036",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Racing Louisville FC",
-        "アウェイ": "Kansas City Current",
+        "ホーム": "Houston Dash",
+        "アウェイ": "Portland Thorns FC",
         "スコア": "0 - 2",
         "状況": "Full Time"
       },
@@ -75,35 +67,27 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401854038",
+        "event_id": "401854036",
         "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Houston Dash",
-        "アウェイ": "Portland Thorns FC",
+        "ホーム": "Racing Louisville FC",
+        "アウェイ": "Kansas City Current",
         "スコア": "0 - 2",
         "状況": "Full Time"
       },
       {
-        "event_id": "401854034",
+        "event_id": "401854037",
         "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Gotham FC",
-        "アウェイ": "Utah Royals",
+        "ホーム": "Seattle Reign FC",
+        "アウェイ": "Orlando Pride",
+        "スコア": "1 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401854035",
+        "日時(JST)": "2026-11-02 07:00 JST",
+        "ホーム": "Washington Spirit",
+        "アウェイ": "Chicago Stars FC",
         "スコア": "2 - 0",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854033",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Bay FC",
-        "アウェイ": "San Diego Wave FC",
-        "スコア": "0 - 1",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401854095",
-        "日時(JST)": "2026-11-02 07:00 JST",
-        "ホーム": "Angel City FC",
-        "アウェイ": "Boston Legacy FC",
-        "スコア": "4 - 1",
         "状況": "Full Time"
       },
       {
@@ -140,22 +124,6 @@
       }
     ],
     "WSL": [
-      {
-        "event_id": "401902880",
-        "日時(JST)": "2026-10-24 20:45 JST",
-        "ホーム": "Tottenham Hotspur",
-        "アウェイ": "Arsenal",
-        "スコア": "1 - 2",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902884",
-        "日時(JST)": "2026-10-25 01:15 JST",
-        "ホーム": "Brighton & Hove Albion",
-        "アウェイ": "West Ham United",
-        "スコア": "3 - 0",
-        "状況": "Full Time"
-      },
       {
         "event_id": "401902883",
         "日時(JST)": "2026-10-25 21:00 JST",
@@ -221,6 +189,14 @@
         "状況": "Full Time"
       },
       {
+        "event_id": "401902873",
+        "日時(JST)": "2026-11-01 23:00 JST",
+        "ホーム": "West Ham United",
+        "アウェイ": "Liverpool",
+        "スコア": "4 - 1",
+        "状況": "Full Time"
+      },
+      {
         "event_id": "401902877",
         "日時(JST)": "2026-11-01 23:00 JST",
         "ホーム": "Birmingham City",
@@ -234,14 +210,6 @@
         "ホーム": "Brighton & Hove Albion",
         "アウェイ": "Crystal Palace",
         "スコア": "2 - 1",
-        "状況": "Full Time"
-      },
-      {
-        "event_id": "401902873",
-        "日時(JST)": "2026-11-01 23:00 JST",
-        "ホーム": "West Ham United",
-        "アウェイ": "Liverpool",
-        "スコア": "4 - 1",
         "状況": "Full Time"
       },
       {
@@ -285,18 +253,18 @@
         "状況": "Scheduled"
       },
       {
-        "event_id": "401902867",
-        "日時(JST)": "2026-11-08 23:00 JST",
-        "ホーム": "Crystal Palace",
-        "アウェイ": "Charlton Athletic",
-        "スコア": "未消化",
-        "状況": "Scheduled"
-      },
-      {
         "event_id": "401902866",
         "日時(JST)": "2026-11-08 23:00 JST",
         "ホーム": "Tottenham Hotspur",
         "アウェイ": "Brighton & Hove Albion",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902867",
+        "日時(JST)": "2026-11-08 23:00 JST",
+        "ホーム": "Crystal Palace",
+        "アウェイ": "Charlton Athletic",
         "スコア": "未消化",
         "状況": "Scheduled"
       },
@@ -397,18 +365,18 @@
         "状況": "Scheduled"
       },
       {
-        "event_id": "401902855",
-        "日時(JST)": "2026-11-22 23:00 JST",
-        "ホーム": "Everton",
-        "アウェイ": "Brighton & Hove Albion",
-        "スコア": "未消化",
-        "状況": "Scheduled"
-      },
-      {
         "event_id": "401902856",
         "日時(JST)": "2026-11-22 23:00 JST",
         "ホーム": "Charlton Athletic",
         "アウェイ": "Aston Villa",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902855",
+        "日時(JST)": "2026-11-22 23:00 JST",
+        "ホーム": "Everton",
+        "アウェイ": "Brighton & Hove Albion",
         "スコア": "未消化",
         "状況": "Scheduled"
       },
