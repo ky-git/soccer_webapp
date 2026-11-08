@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-09T00:15:16.817513+09:00",
+  "last_full_update": "2026-11-09T04:45:06.751349+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -111,8 +111,8 @@
         "日時(JST)": "2026-11-09 02:30 JST",
         "ホーム": "Gotham FC",
         "アウェイ": "Seattle Reign FC",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401932957",
@@ -257,24 +257,24 @@
         "日時(JST)": "2026-11-08 23:00 JST",
         "ホーム": "Tottenham Hotspur",
         "アウェイ": "Brighton & Hove Albion",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "2 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902867",
         "日時(JST)": "2026-11-08 23:00 JST",
         "ホーム": "Crystal Palace",
         "アウェイ": "Charlton Athletic",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "3 - 2",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902872",
         "日時(JST)": "2026-11-08 23:30 JST",
         "ホーム": "London City Lionesses",
         "アウェイ": "Birmingham City",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "4 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902863",
