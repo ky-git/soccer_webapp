@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-09T15:37:22.606944+09:00",
+  "last_full_update": "2026-11-10T02:33:16.617352+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -97,6 +97,22 @@
         "アウェイ": "Portland Thorns FC",
         "スコア": "4 - 1",
         "状況": "Full Time"
+      },
+      {
+        "event_id": "401933734",
+        "日時(JST)": "2026-11-15 02:00 JST",
+        "ホーム": "Washington Spirit",
+        "アウェイ": "Utah Royals",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401933740",
+        "日時(JST)": "2026-11-16 05:00 JST",
+        "ホーム": "Gotham FC",
+        "アウェイ": "Kansas City Current",
+        "スコア": "未消化",
+        "状況": "Scheduled"
       }
     ],
     "WSL": [
