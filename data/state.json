@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-14T20:31:09.804172+09:00",
+  "last_full_update": "2026-11-15T03:07:27.294098+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -104,7 +104,7 @@
         "ホーム": "Washington Spirit",
         "アウェイ": "Utah Royals",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Halftime"
       },
       {
         "event_id": "401933740",
@@ -233,24 +233,24 @@
         "日時(JST)": "2026-11-14 21:45 JST",
         "ホーム": "Manchester United",
         "アウェイ": "Crystal Palace",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "2 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902865",
         "日時(JST)": "2026-11-14 22:30 JST",
         "ホーム": "Chelsea",
         "アウェイ": "Manchester City",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "1 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902861",
         "日時(JST)": "2026-11-15 00:00 JST",
         "ホーム": "Tottenham Hotspur",
         "アウェイ": "Everton",
-        "スコア": "未消化",
-        "状況": "Scheduled"
+        "スコア": "0 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902862",
@@ -258,7 +258,7 @@
         "ホーム": "Brighton & Hove Albion",
         "アウェイ": "Liverpool",
         "スコア": "未消化",
-        "状況": "Scheduled"
+        "状況": "Halftime"
       },
       {
         "event_id": "401902859",
