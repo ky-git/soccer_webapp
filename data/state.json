@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-20T06:38:30.715122+09:00",
+  "last_full_update": "2026-11-20T12:19:47.898928+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -149,19 +149,19 @@
         "状況": "Full Time"
       },
       {
-        "event_id": "401902859",
-        "日時(JST)": "2026-11-15 23:00 JST",
-        "ホーム": "Aston Villa",
-        "アウェイ": "Birmingham City",
-        "スコア": "1 - 0",
-        "状況": "Full Time"
-      },
-      {
         "event_id": "401902860",
         "日時(JST)": "2026-11-15 23:00 JST",
         "ホーム": "West Ham United",
         "アウェイ": "Charlton Athletic",
         "スコア": "2 - 0",
+        "状況": "Full Time"
+      },
+      {
+        "event_id": "401902859",
+        "日時(JST)": "2026-11-15 23:00 JST",
+        "ホーム": "Aston Villa",
+        "アウェイ": "Birmingham City",
+        "スコア": "1 - 0",
         "状況": "Full Time"
       },
       {
@@ -225,6 +225,22 @@
         "日時(JST)": "2026-11-22 23:30 JST",
         "ホーム": "Arsenal",
         "アウェイ": "West Ham United",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902851",
+        "日時(JST)": "2026-12-12 04:00 JST",
+        "ホーム": "Everton",
+        "アウェイ": "Arsenal",
+        "スコア": "未消化",
+        "状況": "Scheduled"
+      },
+      {
+        "event_id": "401902846",
+        "日時(JST)": "2026-12-12 04:00 JST",
+        "ホーム": "Tottenham Hotspur",
+        "アウェイ": "Charlton Athletic",
         "スコア": "未消化",
         "状況": "Scheduled"
       }
