@@ -1,5 +1,5 @@
 {
-  "last_full_update": "2026-11-23T00:21:07.150900+09:00",
+  "last_full_update": "2026-11-23T06:48:50.839012+09:00",
   "fixtures_snapshot": {
     "NWSL": [
       {
@@ -177,24 +177,24 @@
         "日時(JST)": "2026-11-22 23:00 JST",
         "ホーム": "Charlton Athletic",
         "アウェイ": "Aston Villa",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "1 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902855",
         "日時(JST)": "2026-11-22 23:00 JST",
         "ホーム": "Everton",
         "アウェイ": "Brighton & Hove Albion",
-        "スコア": "未消化",
-        "状況": "Second Half"
+        "スコア": "0 - 1",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902858",
         "日時(JST)": "2026-11-22 23:30 JST",
         "ホーム": "Arsenal",
         "アウェイ": "West Ham United",
-        "スコア": "未消化",
-        "状況": "First Half"
+        "スコア": "0 - 0",
+        "状況": "Full Time"
       },
       {
         "event_id": "401902851",
